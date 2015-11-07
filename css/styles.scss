@@ -1,0 +1,58 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+// Brand colors
+$brand-blue:       #4078c0 !default;
+$brand-gray-light: #999    !default;
+$brand-gray:       #767676 !default;
+$brand-gray-dark:  #333    !default;
+$brand-green:      #6cc644 !default;
+$brand-red:        #bd2c00 !default;
+$brand-orange:     #c9510c !default;
+$brand-purple:     #6e5494 !default;
+
+@import "normalize", "icons", "syntax-highlighting", "base";
+
+
+// Sections
+@import "sections/header", "sections/footer", "sections/post", "sections/archive";
+
+// Markdown GitHub
+@import "markdown";
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 1.8em;
+    color: $brand-gray-dark;
+}
+
+.container {
+    max-width: 620px;
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+}
+
+.hr {
+    width: 25%;
+    margin: 40px auto;
+    border: none;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.currentdate {
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 1.2;
+    display: inline-block;
+    font-family: 'Merriweather', serif;
+    background-color: $brand-gray-dark;
+    color: #fff;
+    padding: 0.25em 0.5em;
+    text-align: left;
+    margin-bottom: 0.75em;
+}

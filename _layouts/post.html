@@ -1,0 +1,21 @@
+{% include header.html %}
+
+<article class="container post">
+    <h2 class="post-title">{{ page.title }}</h2>
+
+    <div class="post-meta">
+        <time class="post-meta-date" datetime="{{ page.date }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+    </div>
+
+    <div class="post-content markdown-body">
+        {{ content }}
+    </div>
+
+    <hr class="hr">
+
+    <div class="post-comments">
+        {% include disqus.html %}
+    </div>
+</article>
+
+{% include footer.html %}

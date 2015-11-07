@@ -1,0 +1,47 @@
+.post {
+
+    .post-meta {
+        margin-bottom: 20px;
+    }
+
+    .post-title {
+        font-weight: 500;
+        margin: 30px 0px;
+        font-size: 2.25em;
+        line-height: 1.4em;
+    }
+
+    .post-excerpt {
+        margin-top: 4em;
+        margin-bottom: 4.5em;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    .post-content {
+
+        .pull-quote {
+            line-height: 1.4;
+            text-align: center;
+            font-size: 32px;
+            margin: 48px 0;
+            border: none;
+            padding: 0;
+            letter-spacing: .01rem;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .hero {
+            height: 250px;
+        }
+
+        .flash {
+            background: #F4F2F0;
+            margin: 0 0 1.5em;
+            padding: 1em 1.5em;
+        }
+    }
+}

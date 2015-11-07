@@ -1,0 +1,28 @@
+.posts {
+    margin: 0;
+    padding: 0;
+
+    li {
+        border-top: 1px solid rgba(0,0,0,.1);
+        padding: 8px 0;
+
+        &:nth-child(2),
+        &:first-child,
+        &.currentyear,
+        &.currentyear+li {
+            border-top: none;
+        }
+
+        time {
+            float: right;
+            color: $brand-gray;
+            font-size: 16px;
+        }
+
+        a {
+            box-shadow: none;
+            border: none;
+            color: $brand-gray-dark;
+        }
+    }
+}

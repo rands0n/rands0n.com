@@ -1,0 +1,23 @@
+title: Randson Jarthis
+email: randsonjs@gmail.com
+description: "Thoughts, Articles and The Modern Web"
+
+baseurl: "/"
+url: "http://randsonjs.com"
+
+# paginate
+paginate: 5
+paginate_path: /page/:num
+
+# permalink
+permalink: :title
+
+# gems
+gems: ['jekyll-paginate']
+
+# sass
+sass:
+    style: :compressed
+
+# Build settings
+markdown: kramdown

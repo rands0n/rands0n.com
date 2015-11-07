@@ -1,0 +1,63 @@
+.site-footer {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    color: $brand-gray-dark;
+    text-align: center;
+
+    a {
+        color: $brand-gray-dark;
+        text-decoration: none;
+
+        &:hover {
+            color: $brand-gray-dark;
+        }
+    }
+}
+
+.social {
+    font-size: 1.1em;
+
+    a {
+        display: inline-block;
+        padding: 4px 12px;
+        transition: color 0.2s;
+        text-decoration: none;
+        box-shadow: none;
+        border-bottom: none;
+
+        .hidden {
+            text-indent: -9999px;
+            visibility: hidden;
+            display: none;
+        }
+
+        &.icon {
+            color: $brand-gray;
+
+            &:hover {
+
+                &.icon-github {
+                    color: $brand-gray-dark;
+                }
+
+                &.icon-rss {
+                    color: $brand-orange;
+                }
+
+                &.icon-twitter {
+                    color: $brand-blue;
+                }
+            }
+        }
+    }
+}
+
+.copyright {
+    margin-top: .4em;
+    font-size: 90%;
+
+    a {
+        box-shadow: none;
+        border: none;
+    }
+}
