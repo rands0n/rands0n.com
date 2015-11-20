@@ -39,9 +39,15 @@
         <header>
             <div class="container">
                 <h1>
-                    <a href="{{ site.url }}" alt="{{ site.title }}" title="ACRE CARALHOO">{{ site.title }}</a>
+                    <a href="{{ site.baseurl }}" alt="{{ site.title }}" title="ACRE CARALHOO">{{ site.title }}</a>
 
-                    <a href="http://randsonjs.github.io" class="blog-pt">Ler Blog em Português</a>
+                    <a href="{% if page.language %}{{ site.baseurl }}{% else %}/pt/{%endif%}" class="blog-pt">
+                        {% if page.language %}
+                            Go to English Blog
+                        {% else %}
+                            Ler Blog em Português
+                        {% endif %}
+                    </a>
                 </h1>
 
                 <div class="site-image">

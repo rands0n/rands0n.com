@@ -1,6 +1,6 @@
 <div id="disqus_thread"></div>
 <script type="text/javascript">
-    var disqus_shortname = 'randsonjs',
+    var disqus_shortname = {% if page.language %}'blograndson'{%else%}'randsonjs'{%endif%},
         disqus_url = '';
 
   disqus_url = "http://randsonjs.com{{ page.url }}";

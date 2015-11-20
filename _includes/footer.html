@@ -4,7 +4,7 @@
         <div class="social">
             <a href="https://github.com/randsonjs" class="icon icon-github" title="Randson's GitHub"><span class="hidden">GitHub</span></a>
             <a href="https://twitter.com/randsonjs" class="icon icon-twitter" title="Randson's Twitter"><span class="hidden">Twitter</span></a>
-            <a href="http://randsonjs.com/feed/index.xml" class="icon icon-rss" title="Randson's RSS feed"><span class="hidden">RSS Feed</span></a>
+            <a href="{% if page.language %}/pt/index.xml{% else %}/feed/index.xml{% endif %}" class="icon icon-rss" title="Randson's RSS feed"><span class="hidden">RSS Feed</span></a>
         </div>
         <div class="copyright">
             <a href="{{ site.url }}">{{ site.title }}</a> &copy; 2015
