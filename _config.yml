@@ -1,9 +1,9 @@
 title: Randson Jarthis
-email: randsonjs@gmail.com
-description: "Thoughts, Articles and The Modern Web"
+email: 'randsonjs@gmail.com'
+description: 'Thoughts, Articles and The Modern Web'
 
-baseurl: "/"
-url: "http://randsonjs.com"
+baseurl: '/'
+url: 'http://randsonjs.com'
 
 # paginate
 paginate: 5
@@ -12,7 +12,8 @@ paginate_path: /page/:num
 # permalink
 permalink: :title/
 
-exclude: ['rsync.sh']
+# exclude files
+exclude: ['rsync.sh', 'Gemfile']
 
 # gems
 gems: ['jekyll-paginate', 'jemoji']
