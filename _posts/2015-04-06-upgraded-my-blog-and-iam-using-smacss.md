@@ -2,6 +2,7 @@
 layout: post
 title: "Upgrade My Blog and I'm Using SMACSS"
 date: 2015-04-06
+tags: [css, smacss]
 ---
 
 Last week I updated the layout of my blog and I'm using SMACSS. On top of that, I prepared some topics that describe the structure I'm using!
