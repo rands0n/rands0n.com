@@ -12,8 +12,10 @@ paginate_path: /page/:num
 # permalink
 permalink: :title/
 
+exclude: ['rsync.sh']
+
 # gems
-gems: ['jekyll-paginate']
+gems: ['jekyll-paginate', 'jemoji']
 
 # sass
 sass:
