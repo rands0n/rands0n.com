@@ -1,26 +1,30 @@
-{% include header.html %}
+---
+layout: default
+---
 
-<article class="container post">
-    <h2 class="post-title">{{ page.title }}</h2>
+<div class="container">
+    <div class="post">
+        <div class="post-title">
+            <h2>{{ page.title }}</h2>
+        </div>
 
-    <div class="post-meta">
-        <time class="post-meta-date" datetime="{{ page.date }}">{{ page.date | date: "%B %-d, %Y" }}</time>
-        ·
-        <span class="read-time" title="Estimate read time">
-            {% assign words = content | number_of_words %}
-            {% if words < 360 %}1min{% else %}{{ words | divided_by:180 }} min read{% endif %}
-        </span>
+        <div class="post-meta">
+            <time class="post-meta-date" datetime="{{ page.date }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+            ·
+            <span class="read-time" title="Estimate read time">
+                {% assign words = content | number_of_words %}
+                {% if words < 360 %}1min{% else %}{{ words | divided_by:180 }} min read{% endif %}
+            </span>
+        </div>
+
+        <div class="post-content">
+            {{ content }}
+        </div>
+
+        <hr class="hr">
+
+        <div class="post-comments">
+            {% include disqus.html %}
+        </div>
     </div>
-
-    <div class="post-content markdown-body">
-        {{ content }}
-    </div>
-
-    <hr class="hr">
-
-    <div class="post-comments">
-        {% include disqus.html %}
-    </div>
-</article>
-
-{% include footer.html %}
+</div>

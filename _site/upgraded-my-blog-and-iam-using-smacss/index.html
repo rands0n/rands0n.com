@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Upgrade My Blog and I'm Using SMACSS &mdash; Randson Oliveira</title>
+
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thoughts, Articles and The Modern Web">
+    <meta name="author" content="Randson Oliveira">
+    <meta name="application-name" content="Randson Oliveira">
+    <meta name="theme-color" content="#FEFEFE">
+
+    <!-- Facebook -->
+    <meta property="og:title" content="Upgrade My Blog and I'm Using SMACSS &mdash; Randson Oliveira">
+    <meta property="og:site_name" content="Randson Oliveira">
+    <meta property="og:url" content="http://randsonjs.com/upgraded-my-blog-and-iam-using-smacss/">
+    <meta property="og:type" content="blog">
+    <meta property="og:image" content="/images/randsonjs.jpg">
+    <meta property="og:description" content="Thoughts, Articles and The Modern Web">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/images/favicon.png">
+
+    <!-- Feed -->
+    <link rel="alternate" type="application/rss+xml" href="/feed/index.xml">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="post">
+    <main>
+        <header class="container">
+            <h1>
+                <a href="/">Randson Oliveira</a>
+            </h1>
+            <p style="margin: -10px 0 20px 0;">I work at <a href="http://www.codeminer42.com/">Codeminer42</a> in São Paulo. <a href="https://twitter.com/rands0n">@rands0n</a> <a href="https://github.com/rands0n">github</a></p>
+        </header>
+
+<div class="container">
+    <div class="post">
+        <div class="post-title">
+            <h2>Upgrade My Blog and I'm Using SMACSS</h2>
+        </div>
+
+        <div class="post-meta">
+            <time class="post-meta-date" datetime="2015-04-06 00:00:00 -0300">April 6, 2015</time>
+            ·
+            <span class="read-time" title="Estimate read time">
+                
+                5 min read
+            </span>
+        </div>
+
+        <div class="post-content">
+            <p>Last week I updated the layout of my blog and I’m using SMACSS. On top of that, I prepared some topics that describe the structure I’m using!</p>
+
+<p>First of all, the SMACSS it’s not the best methodology in the world. He helped me a lot to organize my CSS and maybe he can help you :) AND…</p>
+
+<p class="pull-quote">
+    SMACSS IT'S NOT A FRAMEWORK
+</p>
+
+<p>SMACSS it’s not like a <a href="http://getbootstrap.com">Twitter Bootstrap</a>, <a href="http://purecss.io/">Pure CSS</a> and many others. It does not come with a set of classes for you to use. It’s just a set of ideias for you to organize your CSS in the best way. You’re not required to use SMACSS the way he is.</p>
+
+<p>There is a <a href="https://smacss.com/files/2012-03-15-workshop-essen.pdf">document</a> on the web about SMACSS workshop. Where the author explains what SMACSS and some points to you use it. On this basics, we can take 5 principles of SMACSS, they are:</p>
+
+<ul>
+  <li><a href="#categorization">Categorization</a></li>
+  <li><a href="#naming-convention">Naming Convention</a></li>
+  <li><a href="#uncouple">Uncouple</a></li>
+  <li><a href="#increase-semantics">Increase Semantics</a></li>
+  <li><a href="#state-based-design">State Based Design</a></li>
+</ul>
+
+<p>All you read about SMACSS here, it’s not a rule. Only ideas of how to organize the CSS of your project. I learned a lot about SMACSS reading posts and articles out of the document cited above.</p>
+
+<p>Now, I’ll introduce you below 5 principles of SMACSS. Have fun!</p>
+
+<h2 id="categorization">Categorization</h2>
+
+<p>Every project needs some organization. And SMACSS will help you to to organize your project. He describe some points to separate your CSS. The points below was removed from the <a href="https://smacss.com/book/categorizing">docs</a> on website. Let’s see:</p>
+
+<ol>
+  <li>Base</li>
+  <li>Layout</li>
+  <li>Module</li>
+  <li>State</li>
+  <li>Theme</li>
+</ol>
+
+<p><strong>Base rules</strong> are the defaults. They are almost exclusively single element selectors but it could include attribute selectors, pseudo-class selectors, child selectors or sibling selectors. Essentially, a base style says that wherever this element is on the page, it should look like <em>this</em>.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">html</span><span class="o">,</span> <span class="nt">body</span><span class="o">,</span> <span class="nt">form</span> <span class="p">{</span> <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span> <span class="nl">padding</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">text</span><span class="o">]</span> <span class="p">{</span> <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#999</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">a</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="m">#039</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">a</span><span class="nd">:hover</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="m">#03C</span><span class="p">;</span> <span class="p">}</span></code></pre></figure>
+
+<p><strong>Layout rules</strong> divide the page into sections. Layouts hold one or more modules together.</p>
+
+<p><strong>Modules</strong> are the reusable, modular parts of our design. They are the callouts, the sidebar sections, the product lists and so on.</p>
+
+<p><strong>State rules</strong> are ways to describe how our modules or layouts will look when in a particular state. Is it hidden or expanded? Is it active or inactive? They are about describing how a module or layout looks on screens that are smaller or bigger. See these CSS classes to understand:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.is-active</span> <span class="p">{</span> <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.is-hidden</span> <span class="p">{</span> <span class="nl">display</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span> <span class="p">}</span></code></pre></figure>
+
+<p>Finally, <strong>Theme rules</strong> are similar to state rules in that they describe how modules or layouts might look. Most sites don’t require a layer of theming but it is good to be aware of it.</p>
+
+<h2 id="naming-convention">Naming Convention</h2>
+
+<p>Naming conventions clarify intents. We see an example of how to define a nomenclature for their classes. Where you set the whole class from the layout of start with the <code class="highlighter-rouge">-l</code> prefix.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.l-header</span> <span class="p">{</span> <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.l-sidebar</span> <span class="p">{</span> <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span> <span class="nl">width</span><span class="p">:</span> <span class="m">20%</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.l-content</span> <span class="p">{</span> <span class="nl">float</span><span class="p">:</span> <span class="nb">right</span><span class="p">;</span> <span class="nl">width</span><span class="p">:</span> <span class="m">80%</span><span class="p">;</span> <span class="p">}</span></code></pre></figure>
+
+<p>Specificity is dangerous. Always give preference to classes instead of ID’s.</p>
+
+<h2 id="uncouple">Uncouple</h2>
+
+<p>We must be abuse of reuse of code. Causing any style disturb a module or any other thing you want to style again. Theoretically, it should be “reset”, ie the default browser in order to apply our style.</p>
+
+<p>Thinking about it, we should not base our selectors in ID’s. Since we want our code to be reused by another element. We must use class instead of ID’s or HTML Elements.</p>
+
+<p>Use ID’s with grave caution.</p>
+
+<h2 id="increase-semantics">Increase Semantics</h2>
+
+<p>We can have a button element to the designer his behavior is a link. Or we can have an <code class="highlighter-rouge">a</code> element to the designer his behavior is a button. So our classes must have names that are linked to it’s function. See an example below a link and button:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;style </span><span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
+    <span class="nc">.link</span> <span class="p">{</span> <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">underline</span><span class="p">;</span> <span class="p">}</span>
+    <span class="nc">.button</span> <span class="p">{</span> <span class="nl">padding</span><span class="p">:</span> <span class="m">2px</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://randsonjs.com"</span> <span class="na">class=</span><span class="s">"link"</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://randsonjs.com"</span> <span class="na">class=</span><span class="s">"button"</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/a&gt;</span></code></pre></figure>
+
+<p>We can also have <code class="highlighter-rouge">div</code> that behave like lists and items lists:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;style </span><span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
+    <span class="nc">.list</span> <span class="p">{</span> <span class="nl">padding</span><span class="p">:</span> <span class="m">4px</span><span class="p">;</span> <span class="p">}</span>
+    <span class="nc">.list</span> <span class="nc">.item-list</span> <span class="p">{</span> <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"list"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item-list"</span><span class="nt">&gt;</span>Lorem1<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item-list"</span><span class="nt">&gt;</span>Lorem2<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+
+<p>The ideia here is to keep the semantics. Many carousel jQuery plugins use <code class="highlighter-rouge">div</code> or <code class="highlighter-rouge">p</code> to declare their items. Thus we maintain our semantics and use the plugin insted of simply leaves you to use it for that.</p>
+
+<h2 id="state-based-design">State Based Design</h2>
+
+<p>The last is State Based Design. He proposes that we use classes to declare states of elements. Classes as <code class="highlighter-rouge">.is-active</code> and <code class="highlighter-rouge">.is-hidden</code> can be used to improve the semantics. Also instead of you use a jQuery selector to remove the DOM element. You cut and adds class from element.</p>
+
+<p>See an example about state classes:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.is-active</span> <span class="p">{</span> <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.is-hidden</span> <span class="p">{</span> <span class="nl">display</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.is-disable</span> <span class="p">{</span> <span class="nl">opacity</span><span class="p">:</span> <span class="m">.5</span><span class="p">;</span> <span class="p">}</span></code></pre></figure>
+
+<p>And abuse of reuse.</p>
+
+<h2 id="considerations">Considerations</h2>
+
+<p>All these thoughts about SMACSS is good to keep in mind. You’re not obliged to follow them. In fact, SMACSS is free for you to do it your way. See what’s best of you and use.</p>
+
+<p>SMACSS is free, be you too :)</p>
+
+        </div>
+
+        <hr class="hr">
+
+        <div class="post-comments">
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'randsonjs',
+        disqus_url = '';
+
+  disqus_url = "http://randsonjs.com/upgraded-my-blog-and-iam-using-smacss/";
+    (function() {
+        var dsq       = document.createElement('script');
+            dsq.type  = 'text/javascript';
+            dsq.async = true;
+            dsq.src   = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+        </div>
+    </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer text-center container">
+        <div class="copyright">
+            <a href="/">Randson Oliveira</a> © 2015
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-41429339-2']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script');
+        ga.type  = 'text/javascript';
+        ga.async = true;
+        ga.src   = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+</body>
+</html>

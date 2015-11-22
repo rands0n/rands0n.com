@@ -1,19 +1,11 @@
     </main>
 
     <footer class="site-footer text-center container">
-        <div class="social">
-            <a href="https://github.com/rands0n" class="icon icon-github" title="Randson's GitHub"><span class="hidden">GitHub</span></a>
-            <a href="https://twitter.com/rands0n" class="icon icon-twitter" title="Randson's Twitter"><span class="hidden">Twitter</span></a>
-            <a href="{% if page.language %}/pt/index.xml{% else %}/feed/index.xml{% endif %}" class="icon icon-rss" title="Randson's RSS feed"><span class="hidden">RSS Feed</span></a>
-        </div>
         <div class="copyright">
-            <a href="{{ site.url }}">{{ site.title }}</a> &copy; 2015
+            <a href="{{ site.baseurl }}">{{ site.title }}</a> © 2015
         </div>
     </footer>
 
     {% include analytics.html %}
-
-    <!-- Javascript -->
-    <script type="text/javascript" src="/js/fokus.min.js"></script>
 </body>
 </html>

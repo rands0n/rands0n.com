@@ -36,22 +36,9 @@
 </head>
 <body class="{{ page.layout }}">
     <main>
-        <header>
-            <div class="container">
-                <h1>
-                    <a href="{{ site.baseurl }}" alt="{{ site.title }}" title="ACRE CARALHOO">{{ site.title }}</a>
-
-                    <a href="{% if page.language %}{{ site.baseurl }}{% else %}/pt/{%endif%}" class="blog-pt">
-                        {% if page.language %}
-                            Go to English Blog
-                        {% else %}
-                            Ler Blog em Português
-                        {% endif %}
-                    </a>
-                </h1>
-
-                <div class="site-image">
-                    <img src="/images/logo.png" class="logo" alt="{{ site.title }}">
-                </div>
-            </div>
+        <header class="container">
+            <h1>
+                <a href="{{ site.baseurl }}">{{site.title}}</a>
+            </h1>
+            <p style="margin: -10px 0 20px 0;">I work at <a href="http://www.codeminer42.com/">Codeminer42</a> in São Paulo. <a href="https://twitter.com/rands0n">@rands0n</a> <a href="https://github.com/rands0n">github</a></p>
         </header>

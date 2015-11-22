@@ -1,23 +1,11 @@
-<section class="container">
-    <nav>
-        <ul class="posts">
+<nav class="archive">
+    <ul class="posts">
         {% for post in site.posts %}
-            {% if post.language != 'pt' %}
-                {% assign currentdate = post.date | date: "%Y" %}
+            <li>
+                <time class="post-date" datetime="{{ post.date }}">{{ post.date | date: "%b %-d, %Y" }}</time>
 
-                {% if currentdate != date %}
-                    <li class="currentyear">
-                        <h2 class="currentdate">{{ currentdate }}</h2>
-                    </li>
-                    {% assign date = currentdate %}
-                {% endif %}
-                <li>
-                    <a href="{{ post.url }}">{{ post.title }}</a>
-
-                    <time class="post-date" datetime="{{ post.date }}">{{ post.date | date: "%B %-d, %Y" }}</time>
-                </li>
-            {% endif %}
+                <a href="{{ post.url }}">{{ post.title }}</a>
+            </li>
         {% endfor %}
-        </ul>
-    </nav>
-</section>
+    </ul>
+</nav>
