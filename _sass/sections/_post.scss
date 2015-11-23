@@ -20,6 +20,11 @@
             line-height: 1.2;
             font-size: 30px;
             margin: 0;
+
+            @media (max-width: 500px) {
+                font-size: 18px;
+                line-height: inherit;
+            }
         }
     }
 

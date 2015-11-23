@@ -31,12 +31,31 @@
                 width: 90px;
                 line-height: 34px;
                 text-align: right;
+
+                @media (max-width: 500px) {
+                    .day {
+                        display: none;
+                    }
+                }
             }
 
             a {
                 box-shadow: none;
                 font-size: 20px;
                 color: $brand-gray-dark;
+            }
+
+            @media (max-width: 500px) {
+                time {
+                    font-size: 10px;
+                    width: 48px;
+                    height: 30px;
+                    line-height: 24px;
+                }
+
+                a {
+                    font-size: 14px;
+                }
             }
         }
     }

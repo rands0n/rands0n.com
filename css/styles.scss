@@ -23,6 +23,14 @@ body {
     background: url(../images/texture-white.png) repeat;
 
     word-wrap: break-word;
+
+    @media (max-width: 500px) {
+        font-size: 12px;
+
+        p {
+            margin: 20px 0;
+        }
+    }
 }
 
 .container {
