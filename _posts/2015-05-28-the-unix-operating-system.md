@@ -13,8 +13,8 @@ Because the Bell System had limitations placed by the government that prevented 
 
 This film "The UNIX System: Making Computers More Productive", is one of two that Bell Labs made in 1982 about UNIX's significance, impact and usability. Even 10 years after its first installation, it's still an introduction to the system. The other film, "The UNIX System: Making Computers Easier to Use", is roughly the same, only a little shorter. The former film was geared towards software developers and computer science students, the latter towards programmers specifically.
 
-The film contains interviews with primary developers Ritchie, Thompson, Brian Kernighan and many others.
-
 <div class="video">
-<iframe height="315" src="https://www.youtube.com/embed/tc4ROCJYbm0" frameborder="0" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/tc4ROCJYbm0" allowfullscreen></iframe>
 </div>
+
+The film contains interviews with primary developers Ritchie, Thompson, Brian Kernighan and many others.

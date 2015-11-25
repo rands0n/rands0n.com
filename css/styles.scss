@@ -16,9 +16,7 @@ $brand-purple:     #6e5494 !default;
 @import 'normalize', 'base';
 
 body {
-    font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
-    font-size: 14px;
-    line-height: 1.6;
+    font: 14px/1.6 Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
     color: $brand-gray-dark;
     background: url(../images/texture-white.png) repeat;
 
@@ -34,10 +32,9 @@ body {
 }
 
 .container {
-    max-width: 640px;
+    max-width: 650px;
     margin: 0 auto;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 0 10px;
     position: relative;
 
     &:before {

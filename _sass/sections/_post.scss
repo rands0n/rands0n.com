@@ -61,5 +61,111 @@
             // margin: 0 0 1.5em;
             padding: 1em 1.5em;
         }
+
+        hr {
+            border-style: none;
+            margin-top: 35px;
+            margin-bottom: 50px;
+            text-align: center;
+
+            &::after {
+                content: '***';
+                text-align: center;
+                display: inline;
+            }
+        }
     }
+}
+.carnival-comment-indicator {
+
+    &:hover {
+        svg {
+            path {
+                fill: $brand-gray-dark !important;
+            }
+        }
+    }
+
+    &.commenting {
+        svg {
+            path {
+                fill: $brand-gray-dark !important;
+            }
+        }
+    }
+
+    svg {
+        path {
+            fill: $brand-gray-dark;
+
+            &:hover {
+                fill: $brand-gray-dark !important;
+            }
+        }
+    }
+}
+
+.carnival-comment-form .carnival-create,
+.carnival-comment-form form input[type="submit"] {
+    background: $brand-gray-dark;
+    border-radius: 3px;
+    border: 0;
+    color: white;
+    display: block;
+    font-family: "calluna-sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    font-size: 0.95rem !important;
+    font-weight: bold;
+    line-height: normal;
+    padding: 0.4rem 0.6rem !important;
+    text-align: center;
+}
+
+.carnival-branding {
+    display: none;
+}
+
+@keyframes open-comments {
+    0% {
+        left: 0
+    }
+    100% {
+        left: -150px
+    }
+}
+
+@-webkit-keyframes open-comments {
+    0% {
+        left:0
+    }
+    100% {
+        left: -150px
+    }
+}
+
+@-webkit-keyframes close-comments {
+    0% {
+        left:-150px
+    }
+    100% {
+        left:0
+    }
+}
+
+@keyframes close-comments {
+    0% {
+        left:-150px
+    }
+    100% {
+        left:0
+    }
+}
+
+.post-content.comments-hidden {
+    -webkit-animation: close-comments 0.1s ease-in-out none;
+    animation: close-comments 0.1s ease-in-out none
+}
+
+.post-content.commenting {
+    -webkit-animation: open-comments 0.1s ease-in-out none;
+    animation:open-comments 0.1s ease-in-out none;
 }
