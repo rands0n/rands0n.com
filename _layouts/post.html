@@ -3,9 +3,11 @@ layout: default
 ---
 
 <div class="container">
-    <div class="post">
+    <div class="post post-page">
         <div class="post-title">
-            <h2>{{ page.title }}</h2>
+            <h2>
+                <a href="{{ page.url }}">{{ page.title }}</a>
+            </h2>
         </div>
 
         <div class="post-meta">
@@ -22,9 +24,5 @@ layout: default
         </div>
 
         <hr class="hr">
-
-        <!-- <div class="post-comments">
-            {% include disqus.html %}
-        </div> -->
     </div>
 </div>

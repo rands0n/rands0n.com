@@ -13,11 +13,13 @@ $brand-red:        #bd2c00 !default;
 $brand-orange:     #c9510c !default;
 $brand-purple:     #6e5494 !default;
 
-@import 'normalize', 'base';
+$brand:            $brand-orange;
+
+@import 'normalize', 'base', 'icons', 'utilities';
 
 body {
     font: 14px/1.6 Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
-    color: $brand-gray-dark;
+    color: #000;
     background: url(../images/texture-white.png) repeat;
 
     word-wrap: break-word;
@@ -54,6 +56,13 @@ body {
     margin: 40px auto;
     border: none;
     border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.rands0n {
+    position: fixed;
+    top: 2em;
+    left: 2em;
+    border: none;
 }
 
 // Sections

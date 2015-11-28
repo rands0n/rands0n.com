@@ -11,7 +11,7 @@
 // }
 
 a {
-    color: $brand-orange;
+    color: $brand;
     position: relative;
     border-bottom: 1px dotted #aaa;
     text-decoration: none;
@@ -57,12 +57,49 @@ code, kbd, pre, samp {
 }
 
 .video {
-    width: 100%;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 18px;
 
     iframe {
-        width: 98%;
-        height: 360px;
-        border-radius: 4px;
-        border: 6px solid #999;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 96%;
+        height: 96%;
+        padding: 1%;
+        border: 1px solid #DBDBDB !important;
+        background: #E9E9E9;
+        border-radius: 6px;
+    }
+}
+
+ul {
+    list-style: none;
+    padding-left: 20px;
+
+    li {
+
+        &::before {
+            content: '-';
+            color: #ABABAB;
+            position: absolute;
+            margin-left: -20px;
+        }
+    }
+}
+
+blockquote {
+    color: #9B9B9B;
+    margin: 30px 0 25px 0px;
+    font-style: oblique;
+    font-size: 12px;
+
+    strong {
+        color: #D0021B;
+        font-style: oblique;
     }
 }
