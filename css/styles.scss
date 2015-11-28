@@ -15,7 +15,7 @@ $brand-purple:     #6e5494 !default;
 
 $brand:            $brand-orange;
 
-@import 'normalize', 'base', 'icons', 'utilities';
+@import 'normalize', 'base', 'utilities';
 
 body {
     font: 14px/1.6 Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
