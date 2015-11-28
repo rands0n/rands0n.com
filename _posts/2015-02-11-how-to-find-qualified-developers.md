@@ -6,7 +6,11 @@ description: People always complain of few qualified candidates who receive. The
 image: https://assets-cdn.github.com/images/modules/about/team-header.jpg
 ---
 
-<p class="flash">This article was originally posted on <a href="https://medium.com/@randsonjs/guia-para-encontrar-desenvolvedores-qualificados-c6d65594534">Medium</a>.</p>
+<div class="post-content-meta">
+    <p>
+        Also available in: <a href="https://medium.com/@randsonjs/guia-para-encontrar-desenvolvedores-qualificados-c6d65594534">Portuguese</a>.
+    </p>
+</div>
 
 Finding a good developer is hard.
 

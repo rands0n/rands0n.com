@@ -7,9 +7,11 @@ description: There is hardly any reason anymore to use `var _this = this` or oth
 image: https://lh3.googleusercontent.com/TvdgDawI60S4XnFmPEkjbhZ5EVDMpYQ6I_INAWNOsojfaNl_o2GfYIQa34RepZNLPegUSlTJZhOOulMFTpzwjlQ2y9tLNlU6jJZNR405nC7Jomnx71mXxkOpRj87HLuAhCIJlYSRhD9pfgcvfLUS98bUygVp57Mes35fxqCL0ToTI79exH8BkgdrirdJ4p1JAcvYP9VkSCUVQDuUGDhTRrDRYIxxUn5qbfMHsM7Im718-gwlwNypnMJSaPkV2ASL5cqoKXtrt0m-rPd1cNEzQVOD4kPBZeyKkQ8IjCvYo8YGV8iEhIls4BcQ3s8ktrd1oR4kHWwU0nC2DTrd13jNzizq_hvdcvI8moi874YuWcRaKaYmjA6zDprxtLMUqZYAd599MboaLXXU8WEiJ19YCTIWbXwfITO0Rzbo4Wvh6Zo-09YyQdZeRAc-xgVqh9pBK52jBZlj9IYgl-w6NR987NSMzCve9ZnMa957AC0gYUYSAdLsBjQhxalPn8nrTcClixz4u7MDyAt0qjc_sJ5rNaAsJO7wfNs3C-tXFAF39gs=w1508-h848-no
 ---
 
-<p class="flash">
-    This article was translated to Brazilian Portuguese and posted on <a href="http://tutsmais.com.br/blog/ecmascript6/faca-uso-do-arrow-functions/">Tutsmais</a>.
-</p>
+<div class="post-content-meta">
+    <p>
+        Also available in: <a href="http://tutsmais.com.br/blog/ecmascript6/faca-uso-do-arrow-functions/">Portuguese</a>.
+    </p>
+</div>
 
 There is hardly any reason anymore to use `var _this = this` or other name to store the value of `this`
 for future use. Before ES6, it was a necessity of code to be littered with references to `this` due date to each
