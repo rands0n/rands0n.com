@@ -1,9 +1,9 @@
 title: 'Randson Oliveira'
-email: 'randsonjs@gmail.com'
+email: 'randson@rands0n.com'
 description: 'Thoughts, Articles and The Modern Web'
 
 baseurl: '/'
-url: 'http://randsonjs.com'
+url: 'http://rands0n.com'
 
 # paginate
 paginate: 5
@@ -13,7 +13,7 @@ paginate_path: /page/:num
 permalink: :title/
 
 # exclude files
-exclude: ['rsync.sh', 'Gemfile']
+exclude: ['rsync.sh', 'Gemfile', 'Gemfile.lock']
 
 # gems
 gems: ['jekyll-paginate', 'jemoji']
