@@ -75,7 +75,7 @@ We know that many professionals are not present in the repositories or organizat
 
 Thinking about these professionals. If they did not get to share their codes or minimum report a problem to the repository. Certainly he did not come for you to hire him. We know that there are exceptions and there are many people out there who do not share their code and are great professionals.
 
-But, why not get in touch with a person who knows the tool? Participating in its development. Even if it bug report, testing to the tool. There are several ways you look at that person you want to hire.
+But, why not get in touch with a person who knows the tool? Participating in it's development. Even if it bug report, testing to the tool. There are several ways you look at that person you want to hire.
 
 In GitHub you'll find the right professional, one community member, event participant related to the area in question. And by the end, a lover of technology.
 

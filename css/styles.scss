@@ -65,5 +65,21 @@ body {
     border: none;
 }
 
+.home {
+    text-align: center;
+    height: 100%;
+
+    div {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        height: 240px;
+        padding: 20px;
+    }
+}
+
 // Sections
-@import 'sections/header', 'sections/footer', 'sections/post', 'sections/archive';
+@import 'sections/header', 'sections/footer', 'sections/post', 'sections/archive', 'sections/nav';

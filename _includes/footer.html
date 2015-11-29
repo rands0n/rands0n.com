@@ -1,10 +1,12 @@
     </main>
 
+    {% if page.layout == "post" %}
     <footer class="site-footer text-center container">
         <div class="copyright">
             <a href="{{ site.baseurl }}">{{ site.title }}</a> © 2015
         </div>
     </footer>
+    {% endif %}
 
     {% include analytics.html %}
 
