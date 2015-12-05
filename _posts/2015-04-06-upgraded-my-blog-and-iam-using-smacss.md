@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Upgrade My Blog and I'm Using SMACSS"
+title: "Upgraded My Blog and I'm Using SMACSS"
 date: 2015-04-06
 tags: [css, smacss]
 ---
