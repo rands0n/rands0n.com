@@ -69,6 +69,11 @@
             letter-spacing: .01rem;
             font-weight: 400;
             font-style: italic;
+
+            @media (max-width: 500px) {
+                font-size: 14px;
+                margin: 22px 0;
+            }
         }
 
         .hero {

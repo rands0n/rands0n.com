@@ -11,11 +11,19 @@
     }
 
     .posts {
-        margin: 0;
+        margin: 58px 0 0 18px;
         padding: 0;
+
+        @media (max-width: 320px) {
+            margin: 58px 0 0 0;
+        }
 
         li {
             padding: 2px 0;
+
+            @media (max-width: 380px) {
+                margin-left: 25px;
+            }
 
             &:nth-child(2),
             &:first-child,
@@ -24,37 +32,53 @@
                 border-top: none;
             }
 
+            &.currentyear {
+                margin: 10px 0;
+                font-size: 26px;
+                color: $brand-orange;
+                display: inline-block;
+            }
+
             &::before {
                 content: "";
+            }
+
+            i {
+                color: #ccc;
+                display: none;
             }
 
             time {
                 float: left;
                 color: $brand-gray-light;
                 font-size: 12px;
-                margin-right: 22px;
-                width: 90px;
                 line-height: 34px;
+                margin-right: 16px;
+                width: 8em;
                 text-align: right;
 
-                @media (max-width: 500px) {
-                    .day {
-                        display: none;
-                    }
+                @media (max-width: 380px) {
+                    display: none;
                 }
             }
 
             a {
                 box-shadow: none;
                 font-size: 14px;
-                line-height: 30px;
+                line-height: 36px;
                 color: $brand-gray-dark;
+                border-bottom: none;
+
+                &:hover {
+                    i {
+                        display: inline-block;
+                    }
+                }
             }
 
             @media (max-width: 500px) {
                 time {
                     font-size: 10px;
-                    width: 48px;
                     height: 32px;
                     line-height: 32px;
                     margin-right: 10px;

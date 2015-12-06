@@ -63,6 +63,7 @@ body {
     top: 2em;
     left: 2em;
     border: none;
+    z-index: 1;
 }
 
 .home {
@@ -102,6 +103,10 @@ body {
     z-index: 2;
 
     border-color: transparent;
+
+    @media (max-width: 835px) {
+        display: none;
+    }
 
     &:before {
         content: "";
