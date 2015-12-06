@@ -1,20 +1,5 @@
     </main>
 
-    {% if page.layout == 'post' %}
-
-    <footer class="site-footer text-center">
-        <div class="social">
-            <a href="https://github.com/{{ site.username }}" class="icon icon-github" title="{{ site.title }}'s GitHub"><span class="hidden">GitHub</span></a>
-            <a href="https://twitter.com/{{ site.username }}" class="icon icon-twitter" title="{{ site.title }}'s Twitter"><span class="hidden">Twitter</span></a>
-            <a href="{{ site.url }}/feed/index.xml" class="icon icon-rss" title="{{ site.title }}'s RSS feed"><span class="hidden">RSS Feed</span></a>
-        </div>
-        <div class="copyright">
-            <a href="{{ site.url }}">{{ site.title }}</a> &copy; 2015
-        </div>
-    </footer>
-
-    {% endif %}
-
     {% include analytics.html %}
 
     <!-- Javascript -->
