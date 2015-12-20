@@ -6,12 +6,6 @@ description: People always complain of few qualified candidates who receive. The
 image: https://assets-cdn.github.com/images/modules/about/team-header.jpg
 ---
 
-<div class="post-content-meta">
-    <p>
-        Also available in: <a href="https://medium.com/@randsonjs/guia-para-encontrar-desenvolvedores-qualificados-c6d65594534">Portuguese</a>.
-    </p>
-</div>
-
 Finding a good developer is hard.
 
 People always complain of few qualified candidates who receive. They post their job openings know to each list. They do all this in the hope that a larger stack of resumes will yield at least one contract that comes to your standards.
