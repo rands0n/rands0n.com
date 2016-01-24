@@ -1,0 +1,16 @@
+title: 'Randson Oliveira'
+email: 'orandson@gmail.com'
+description: 'Thoughts, Articles and The Modern Web'
+
+baseurl: '/'
+url: 'http://rands0n.com'
+
+# paginate
+paginate: 5
+paginate_path: /page/:num
+
+# permalink
+permalink: :title/
+
+# Build settings
+markdown: kramdown

@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<nav class="archive">
+    <ul class="posts">
+        {% for post in site.posts %}
+
+            {% assign currentdate = post.date | date: "%Y" %}
+                {% if currentdate != date %}
+                    <li class="currentyear"></li>
+                {% assign date = currentdate %}
+            {% endif %}
+            {% if post.language != 'pt' %}
+                <li>
+                    {% assign words = post.content | number_of_words %}
+                    <a href="{{ post.url }}">{{ post.title }} <i>~ {% if words < 360 %}1min{% else %}{{ words | divided_by:180 }}min{% endif %}</i></a>
+
+                    <time class="post-date" datetime="{{ post.date }}">
+                        {{ post.date | date: "%b" }}
+                        <span class="day">{{ post.date | date: "%-d, " }}</span>
+                        {{ post.date | date: "%Y" }}
+                    </time>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</nav>
