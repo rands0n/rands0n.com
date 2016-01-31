@@ -56,7 +56,7 @@ It's more easily to find your pattern testing by a match. When you want one word
 
 The website I recommend to use is [regex101.com](http://regex101.com/). You can put a string by example and test your pattern through test string below.
 
-{% highlight shell %}
+{% highlight bash %}
 /[123456789]/ # "In 1992" #=> 1992
 /[0-9]/ # "In 1992" #=> 1992
 /\d+/ # "In 1992" #=> 1992
@@ -102,7 +102,7 @@ We now know how to match a single digit. What if we want to match a whole number
 
 When you put a plus sign (`+`) after something in a regular expression, it indicates that the element may be repeated more than once. Thus, `/\d+/` matches one or more digit characters.
 
-{% highlight shell %}
+{% highlight bash %}
 /\d+/ # 123 #=> true
 /\d+/ # '' #=> false
 /\d*/ # 123 #=> true
@@ -115,7 +115,7 @@ The star (`*`) has a similar meaning but also allows the pattern to match zero t
 
 A question mark makes a part of a pattern "optional", meaning it may occur zero or one time. In the following example, the _u_ character is allowed to occur, but the pattern also matches when it's missing.
 
-{% highlight shell %}
+{% highlight bash %}
 /neighbou?r/ # neighbor #=> true
 {% endhighlight %}
 
