@@ -73,5 +73,5 @@
         return node.getAttribute && node.tagName === 'SCRIPT';
     }
 
-    window.Carnival = Carnival;
+    win.Carnival = Carnival;
 })(window);
