@@ -50,29 +50,13 @@ body {
 }
 
 a {
-    color: #C9510C;
     position: relative;
-    border-bottom: 1px dotted #aaa;
     text-decoration: none;
-
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
+    border-bottom: 2px solid transparent;
 }
 
 a:hover {
-    border-color: #333;
-}
-
-::selection {
-    background-color: #333;
-    color: #C2C2C2;
-}
-
-::-moz-selection {
-    background-color: #333;
-    color: #C2C2C2;
+    border-bottom-color: #999;
 }
 
 p {
@@ -457,6 +441,7 @@ tbody tr:nth-child(odd) th {
     line-height: 36px;
     color: #333;
     border-bottom: none;
+    text-decoration: none;
 }
 
 .archive .posts li a:hover i {
