@@ -61,6 +61,10 @@ a:hover {
     border-bottom-color: #999;
 }
 
+figure {
+    margin: 1em 0;
+}
+
 p {
     margin: 25px 0;
 }
