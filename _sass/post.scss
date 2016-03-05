@@ -141,5 +141,19 @@
             max-width: 110%;
             margin-left: -5%;
         }
+
+        .footnotes {
+            border-top: 1px solid #f2f0ed;
+            color: #999;
+            font-size: 12px;
+
+            ol {
+                padding: 0 0 0 14px;
+
+                p {
+                    margin: 0;
+                }
+            }
+        }
     }
 }
