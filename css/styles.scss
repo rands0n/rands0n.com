@@ -36,7 +36,22 @@ main {
         'archive',
         'page',
         'post',
-        'syntax-highlight';
+        'syntax-highlight',
+        'cards';
+
+    .card {
+        width: 212px;
+        text-align: center;
+        padding: 20px 0;
+        border-radius: 6px;
+        border-top: 1px solid rgba(0,0,0,0.1);
+        border-left: 1px solid rgba(0,0,0,0.1);
+        border-right: 1px solid rgba(0,0,0,0.1);
+        box-shadow: 0 3px 1px 0 rgba(0,0,0,0.1);
+        background-color: #f9f9f9;
+        // margin-top: 22em;
+        display: inline-block;
+    }
 
     .container {
         position: absolute;
@@ -48,6 +63,31 @@ main {
             width: 650px;
             margin: 0 auto;
             padding: 60px 0 40px 0;
+        }
+    }
+
+    .table-of-contents {
+        list-style: none;
+        margin: 0;
+        text-align: center;
+        font-size: 12px;
+        padding: 0;
+        text-transform: uppercase;
+
+        li {
+            padding: 0 10px;
+            margin: 5px 0;
+
+            a {
+                display: block;
+                text-decoration: none;
+                color: #333;
+
+                &:hover {
+                    box-shadow: 0 0 10px 0 #444;
+                    border-radius: 4px;
+                }
+            }
         }
     }
 }

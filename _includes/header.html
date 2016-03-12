@@ -34,6 +34,7 @@
     <!-- Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,700,300|Open+Sans:700,300,400|Noto+Serif' rel='stylesheet' type='text/css'>
 
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/3.0.3/normalize.css">
     <link rel="stylesheet" href="/css/styles.css">
@@ -41,39 +42,51 @@
 <body class="{{ page.layout }}">
     <main>
         <div class="masthead">
-            <div class="background-info"></div>
-            <a href="{{ site.baseurl }}" class="info">
-                <img src="http://gravatar.com/avatar/2c5f73ce08b339317d69892fd6db84db" alt="">
-                <h1>{{ site.title }}</h1>
-                <span class="blog-description">{{ site.sub_name }}</span>
-            </a>
+            <div class="card">
+                <div class="background-info"></div>
+                <a href="{{ site.baseurl }}" class="info">
+                    <img src="http://gravatar.com/avatar/2c5f73ce08b339317d69892fd6db84db" alt="">
+                    <h1>{{ site.title }}</h1>
+                    <span class="blog-description">{{ site.sub_name }}</span>
+                </a>
 
-            <ul class="icons">
-                <li>
-                    <a href="https://twitter.com/rands0n">
-                        <span class="icon icon-twitter">{% include icon-twitter.svg %}</span>
-                    </a>
-                </li>
-                <li class="icon-item">
-                    <a href="https://github.com/rands0n">
-                        <span class="icon icon-github">{% include icon-github.svg %}</span>
-                    </a>
-                </li>
-                <li class="icon-item">
-                    <a href="{{ site.url }}/index.xml">
-                        <span class="icon icon-rss">{% include icon-rss.svg %}</span>
-                    </a>
-                </li>
-            </ul>
-
-            <nav>
-                <ul>
-                    <li><a href="{{ site.baseurl }}">Blog</a></li>
-                    <li><a href="/talks/">Talks</a></li>
-                    <li><a href="/projects/">Projects</a></li>
+                <ul class="icons">
+                    <li>
+                        <a href="https://twitter.com/rands0n">
+                            <span class="icon icon-twitter">{% include icon-twitter.svg %}</span>
+                        </a>
+                    </li>
+                    <li class="icon-item">
+                        <a href="https://github.com/rands0n">
+                            <span class="icon icon-github">{% include icon-github.svg %}</span>
+                        </a>
+                    </li>
+                    <li class="icon-item">
+                        <a href="{{ site.url }}/index.xml">
+                            <span class="icon icon-rss">{% include icon-rss.svg %}</span>
+                        </a>
+                    </li>
                 </ul>
-            </nav>
+
+                <nav>
+                    <ul>
+                        <li><a href="{{ site.baseurl }}">Blog</a></li>
+                        <li><a href="/talks/">Talks</a></li>
+                        <li><a href="/projects/">Projects</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
+
+        {% if page.layout == 'post' %}
+        <ul class="cards">
+            <li class="card">
+                <h4 class="card-title">table of contents</h4>
+
+                <ul class="table-of-contents"></ul>
+            </li>
+        </ul>
+        {% endif %}
         <div class="container">
             <div class="content">
 

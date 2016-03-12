@@ -13,7 +13,7 @@ Hello, how about forgetting a little routine and reality and take a trip to the 
 
 Inspired by operating their own neurons, discover the fascinating world of Regular Expressions.
 
-## Preseting the Regular Expression
+## Presenting
 
 So, in order to start our trip, nothing like a presentation of the subject, because, after all, what's Regular Expression?
 
@@ -33,7 +33,7 @@ Or formally speaking is:
 
 Above all, a Regular Expression is **fun**.
 
-## Learn more about history of (re|regex)
+## The History
 
 Regular expressions are originated in 1956, when mathematician [Stephen Cole Kleene](https://en.wikipedia.org/wiki/Stephen_Cole_Kleene) described [regular languages](https://en.wikipedia.org/wiki/Regular_language) using his mathematical notation called _regular sets_. These arose in [theorical computer science](https://en.wikipedia.org/wiki/Theoretical_computer_science), in the subfields of [automata theory](https://en.wikipedia.org/wiki/Automata_theory)(models of computation) and the description and classification of [formal languages](https://en.wikipedia.org/wiki/Formal_language). Other early implementations of [pattern matching](https://en.wikipedia.org/wiki/Pattern_matching) include the [SNOBOL](https://en.wikipedia.org/wiki/SNOBOL) language, which did not use regular expressions, but instead its own pattern matching constructs.
 
