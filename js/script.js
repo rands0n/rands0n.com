@@ -11,6 +11,10 @@
     });
 
     document.addEventListener('DOMContentLoaded', function() {
-        document.querySelector('.cards ul').innerHTML = lis;
+        if (titles.length > 0) {
+            document.querySelector('.cards ul').innerHTML = lis;
+        } else {
+            document.querySelector('.cards').innerHTML = '';
+        }
     });
 })(window, document);
