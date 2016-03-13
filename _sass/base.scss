@@ -65,15 +65,16 @@ code {
     margin-bottom: 18px;
 }
 
-.video iframe {
+.video iframe,
+.video embed,
+.video video,
+.video object {
     position: absolute;
     top: 0;
     left: 0;
-    width: 96%;
-    height: 96%;
-    padding: 1%;
+    width: 100%;
+    height: 100%;
     border: 1px solid #DBDBDB !important;
-    background: #E9E9E9;
     border-radius: 6px;
 }
 
