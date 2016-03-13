@@ -11,7 +11,14 @@ layout: default
         </div>
 
         <div class="post-meta">
-            <time class="post-meta-date" datetime="{{ page.date }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+            <span class="post-meta-date">
+                <span class="octicon octicon-calendar"></span>
+                <time datetime="{{ page.date }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+            </span>
+            <span class="post-meta-read-time" style="margin-left: 10px;">
+                <span class="octicon octicon-clock"></span>
+                {% include reading-time.html %}
+            </span>
         </div>
 
         <div class="post-content">
