@@ -26,6 +26,12 @@ layout: default
         </div>
     </div>
 
+    <ul class="tags">
+        {% for tag in page.tags %}
+            <li><a href="/tag/{{ tag }}">{{ tag }}</a></li>
+        {% endfor %}
+    </ul>
+
     <h2>Comments</h2>
 
     <div class="post-comments">
