@@ -6,6 +6,12 @@ title: 'Talks'
 Here you can find all my presentation slides/videos and also know where you can find me in the future. Also,
 places I have been and I'll be.
 
+## ~ 2016
+
+- [RubyConfBR](http://rubyconf.com.br) ≈ 1200
+    - _Where:_ São Paulo, SP
+    - _When:_ September, 22, 23
+
 ## ~ 2015
 
 - [BrazilJS](http://braziljs.com.br/2015/) ≈ 1000
