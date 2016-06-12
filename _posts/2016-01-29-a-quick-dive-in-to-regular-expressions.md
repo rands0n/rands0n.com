@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A Quickly Dive In To Regular Expressions"
+title: "A Quick Dive In To Regular Expressions"
 date: 2016-01-29
 description: Hello, how about forgetting a little routine and reality and take a trip to the interior of your mind? Discover new, different concepts. When go back, things will not be as normal as before because strangest symbols will be part of your day-to-day life.
 ---
