@@ -1,0 +1,36 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+$default-color: #4E854B;
+
+@import "base", "syntax";
+
+body {
+  background: #f8f6f3;
+  font-family: 'Lucida Console', Monaco, monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 20px;
+
+  .container {
+    max-width: 650px;
+  }
+}
+
+.site-title {
+
+  a {
+    border: none;
+  }
+}
+
+.footer {
+  float: left;
+  width: 100%;
+  margin-bottom: 25px;
+  margin-top: 0;
+}
+
+@import "post";

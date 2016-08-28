@@ -1,0 +1,824 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Randson Oliveira</title>
+    <link>http://rands0n.com</link>
+    <atom:link href="http://rands0n.com/feed/index.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 28 Aug 2016 00:19:31 -0300</pubDate>
+    <lastBuildDate>Sun, 28 Aug 2016 00:19:31 -0300</lastBuildDate>
+    <generator>Jekyll v3.0.2</generator>
+
+    
+      <item>
+        <title>Open a GitHub Pull Request with Hub</title>
+        <description>&lt;p&gt;Both in my professional life and personal life working as a open source contributor I use Git and Git&lt;a href=&quot;https://hub.github.com/&quot;&gt;Hub&lt;/a&gt; a lot of time. GitHub publishes a command-line tools called &lt;a href=&quot;https://hub.github.com/&quot;&gt;Hub&lt;/a&gt;, which is more convenient way than the website for doing a few specific tasks and in particular I’ve been using it more and more for opening pull requests(aka PR’s).&lt;/p&gt;
+
+&lt;p&gt;It’s fairly common to alias your &lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt; command to use with &lt;code class=&quot;highlighter-rouge&quot;&gt;hub&lt;/code&gt; command, which gives you all your existing Git functionality with a few special GitHub-aware features like the &lt;code class=&quot;highlighter-rouge&quot;&gt;pull-request&lt;/code&gt; command.&lt;/p&gt;
+
+&lt;h2 id=&quot;git--hub--github&quot;&gt;Git + Hub = GitHub&lt;/h2&gt;
+
+&lt;p&gt;First, you need to install &lt;a href=&quot;https://git-scm.com/download&quot;&gt;Git&lt;/a&gt; on your machine if it is not installed 😊&lt;/p&gt;
+
+&lt;p&gt;The basic workflow is to create a branch, add your changes, commit them and then push it to GitHub. But if you are first in Hub. You’re welcome to install it in your machine.&lt;/p&gt;
+
+&lt;p&gt;If you are using osx, you can do this simple put this on terminal:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;brew install hub&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;And if you aren’t on OSX you can install using &lt;a href=&quot;http://linuxbrew.sh/&quot;&gt;linuxbrew&lt;/a&gt; and use the same command above to install it.&lt;/p&gt;
+
+&lt;h2 id=&quot;basic-workflow&quot;&gt;Basic Workflow&lt;/h2&gt;
+
+&lt;p&gt;After you commit your changes and push them to GitHub. It’s time to open a new Pull Request. I’m pushing to my origin, I’m not sure what happens if you’re pushing to somewhere else but if you know how, please add a comment below.&lt;/p&gt;
+
+&lt;p&gt;Running &lt;code class=&quot;highlighter-rouge&quot;&gt;git version&lt;/code&gt; on my machine. The &lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;hub&lt;/code&gt; are showed to me:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;git version
+git version 2.7.0
+hub version 2.2.2&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;It show the &lt;code class=&quot;highlighter-rouge&quot;&gt;hub&lt;/code&gt; version because &lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt; is an alias on my &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.zshrc&lt;/code&gt; file. To make this you need to edit the &lt;code class=&quot;highlighter-rouge&quot;&gt;.zshrc&lt;/code&gt; file and add a new alias to &lt;code class=&quot;highlighter-rouge&quot;&gt;hub&lt;/code&gt;. If you’re using bash, you can edit the &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.bashrc&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;nano ~/.zshrc&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;For bash users:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;nano ~/.bashrc&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;And add this at the end of the file:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;git&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;hub&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;After that, you must restart you terminal. Just put there a &lt;code class=&quot;highlighter-rouge&quot;&gt;zsh&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;bash&lt;/code&gt; command.&lt;/p&gt;
+
+&lt;h2 id=&quot;commiting-you-files&quot;&gt;Commiting you files&lt;/h2&gt;
+
+&lt;p&gt;I’m implement this working on a tags on this blog. So, to do that. I’ll create a commit to put this file and the things I’ve done about the tag feature on GitHub and create a new pull pequest to show to you.&lt;/p&gt;
+
+&lt;p&gt;Because this blog is hosted on a &lt;a href=&quot;https://github.com/rands0n/rands0n.com&quot;&gt;GitHub Pages&lt;/a&gt; the tags will not work now and you’ll not see this working. I have plans to purchase a host plan soon :-)&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;git commit -m &lt;span class=&quot;s1&quot;&gt;&#39;Create a new commit to show how to open a pull request with hub&#39;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;A big commit message I know. After that I pushed to the &lt;code class=&quot;highlighter-rouge&quot;&gt;feature/tags&lt;/code&gt; on GitHub and created a new pull request with the hub command.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;git push origin feature/tags
+
+Counting objects: 11, &lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;.
+Delta compression using up to 2 threads.
+Compressing objects: 100% &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;9/9&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, &lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;.
+Writing objects: 100% &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;11/11&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, 1.91 KiB | 0 bytes/s, &lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;.
+Total 11 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;delta 4&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, reused 0 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;delta 0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+To git@github.com:rands0n/rands0n.com.git
+  &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;new branch]      feature/tags -&amp;gt; feature/tags&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;On code on GitHub, you just need to enter &lt;code class=&quot;highlighter-rouge&quot;&gt;git pull-request&lt;/code&gt;. I’ve put an image below about this command :D&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/git-commit.png&quot; style=&quot;margin: 0 auto;&quot; alt=&quot;editor to create a description on github about a pr&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And the anwser is&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;https://github.com/rands0n/rands0n.com/pull/7&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;More nice things you can do with &lt;code class=&quot;highlighter-rouge&quot;&gt;git pull-request&lt;/code&gt; command:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Create a pull request against origin/master (this is the default):&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;git pull-request&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Create a pull request against another repo, you’d probably use this for open source or any other situation where you are pushing to a fork but requesting a pull against an upstream repo; use the &lt;code class=&quot;highlighter-rouge&quot;&gt;-b&lt;/code&gt; switch and the format &lt;code class=&quot;highlighter-rouge&quot;&gt;owner:branch&lt;/code&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;git pull-request -b joindin:master&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Create a pull request against a branch called something other than “master”:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;git pull-request -b develop&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Create a pull request against something else entirely! The argument is in the format &lt;code class=&quot;highlighter-rouge&quot;&gt;owner/repo:branch&lt;/code&gt; for that.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;merging-pull-requests&quot;&gt;Merging pull requests&lt;/h2&gt;
+
+&lt;p&gt;It’s the same when you click on a green button on GitHub’s interface. So, I’ve merged the commit above by putting this command on my terminal. Nicely ;).&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;git merge https://github.com/rands0n/rands0n.com/pull/7&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Thanks to read this little tutorial. It’s just about &lt;a href=&quot;https://hub.github.com/&quot;&gt;Hub&lt;/a&gt; and a very specific command(pr). It helped a lot to me open a new pull requests on my work and I think it can help in your work.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 13 Apr 2016 00:00:00 -0300</pubDate>
+        <link>http://rands0n.com/open-github-pull-request-hub/</link>
+        <guid isPermaLink="true">http://rands0n.com/open-github-pull-request-hub/</guid>
+
+        
+          <category>github</category>
+        
+          <category>hub</category>
+        
+          <category>git</category>
+        
+          <category>beginner</category>
+        
+          <category>tutorial</category>
+        
+
+        
+      </item>
+    
+      <item>
+        <title>Foursquare, Instagram, Redes Sociais e afins</title>
+        <description>&lt;p&gt;Por um bom tempo utilizei o foursquare para poder registrar os lugares que ia, descobrir novos lugares que gostaria de conhecer e também conhecer um pouco mais dos locais da cidade. Hoje o aplicativo está separado e temos o swarm e foursquare.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;O swarm basicamente faz o que o foursquare fazia antigamente, me permite fazer check-in no lugar, me da alerta de novos lugares próximo e também tem um controle legal de prefeitura.&lt;/p&gt;
+
+&lt;p&gt;As razões para deixar de usar os serviços são aquelas tradicionais que fazem os mais céticos abandonarem redes e serviços: “Qual a razão de usar isso? O que isso vai acrescentar em minha vida?”. Pois bem, não pude responder a essas perguntas e deixei de fazer meus check-ins.&lt;/p&gt;
+
+&lt;p&gt;Antes de deixar de utilizar, fiz bastante check-ins em um Mac Donald’s aqui próximo de casa e reparei que nunca ganhava a prefeitura desse lugar mesmo frequentando 3 vezes por semana. Intrigado, resolvi vê quem era essa pessoa(o qual não vou citar nomes para desde já preservar a identidade dos elementos) que sempre ganhava de mim na prefeitura do local.&lt;/p&gt;
+
+&lt;p&gt;E é ai que resolvi pesquisar uma coisa.&lt;/p&gt;
+
+&lt;p&gt;De cara no perfil da pessoa(que chamarei aqui de Jane) no &lt;em&gt;swarm&lt;/em&gt; ela linka o seu Twitter com Facebook. Uma rápida olhada no seu perfil ví que ela fazia muitos check-ins como o titulo &lt;em&gt;Jane’s House&lt;/em&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Dessa forma descobri que Jane mora na Vila Mariana.&lt;/li&gt;
+  &lt;li&gt;Descobri que Jane trabalha na Avenida Paulista. Onde realizava check-ins frequentes com descrições do tipo &lt;em&gt;work ¬¬&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Pelas suas informações do Facebook, descobri que ela não é de São Paulo e mora aqui a 3 anos. Tem um pet que deverás admiro e esteve no ultimo mês viajando para o nordeste.&lt;/p&gt;
+
+&lt;p&gt;Cruzando suas informações pelo Facebook descobri o seu Instagram, Youtube, Google+, Twitter, LinkedIn e um VSCO desatualizado.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Pelo Instagram descobri que já visitou a Europa, só não consegui assimilar as datas pelas frequências de postagens. E que também tinha um boa camêra e tirava fotos muitos boas dos lugares de São Paulo.&lt;/li&gt;
+  &lt;li&gt;Pelo VSCO ví que possuia uma tatuagem que deverás invejei.&lt;/li&gt;
+  &lt;li&gt;Pelo Youtube ví um video &lt;em&gt;cool&lt;/em&gt; de sua viagem a Espanha.&lt;/li&gt;
+  &lt;li&gt;Pelo Facebook além de descobrir suas mais de 1000 conexões, consegui ver boa partes dos seus parentes pesquisando pelo seu nome e sobrenome.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;E essa foi a pesquisa, com uma única informação em um espaço de 15 minutos. Consegui descobrir:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Nome completo&lt;/li&gt;
+  &lt;li&gt;Idade&lt;/li&gt;
+  &lt;li&gt;Apelidos&lt;/li&gt;
+  &lt;li&gt;Área de atuação&lt;/li&gt;
+  &lt;li&gt;Onde estudou/estuda&lt;/li&gt;
+  &lt;li&gt;Características físicas&lt;/li&gt;
+  &lt;li&gt;Endereço&lt;/li&gt;
+  &lt;li&gt;Informações sobre sua família&lt;/li&gt;
+  &lt;li&gt;Passado pessoal&lt;/li&gt;
+  &lt;li&gt;Gostos gastronômicos e culturais&lt;/li&gt;
+  &lt;li&gt;Rede de amigos&lt;/li&gt;
+  &lt;li&gt;Viagens que já fez&lt;/li&gt;
+  &lt;li&gt;Partes de sua rotina&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Acredito que boa parte dos usuários de redes sociais tem ciência do que a privacidade pode nos trazer. Acredito que a Jane do experimento tenha conhecimento suficiente da internet para saber seus riscos. Seu Facebook tem informações fechadas, deixando apenas ver algumas. Mas o cruzamento das informações com diferentes tipos de redes sociais podemos montar um perfil da pessoa online e offline.&lt;/p&gt;
+
+&lt;p&gt;E mesmo dessa forma compartilhamos boa parte de nossas vidas, momentos pessoais e rotinas que desejamos, como se apenas nossos amigos se interessassem. De fato, apenas eles se interessem. Merda, talvez nem eles se interessem.&lt;/p&gt;
+
+&lt;p&gt;Mas eu não sou amigo de Jane, e provavelmente já sei muito mais de sua vida do que muitos de seus amigos. Só precisei de uma busca e 15 minutos.&lt;/p&gt;
+
+&lt;p&gt;E sim, eu poderia estar no lugar dela. Faça o teste! ;D&lt;/p&gt;
+</description>
+        <pubDate>Tue, 09 Feb 2016 00:00:00 -0200</pubDate>
+        <link>http://rands0n.com/foursquare-instagram-redes-sociais-afins/</link>
+        <guid isPermaLink="true">http://rands0n.com/foursquare-instagram-redes-sociais-afins/</guid>
+
+        
+          <category>off-topic</category>
+        
+
+        
+      </item>
+    
+      <item>
+        <title>A Quick Dive In To Regular Expressions</title>
+        <description>&lt;p class=&quot;availables&quot;&gt;
+    Also available in &lt;a href=&quot;https://medium.com/codeminer-42/um-r%C3%A1pido-mergulho-em-express%C3%B5es-regulares-e8e52c5b247c&quot;&gt;Portuguese&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;Hello, how about forgetting a little routine and reality and take a trip to the interior of your mind? Discover new, different concepts. When go back, things will not be as normal as before because strangest symbols will be part of your day-to-day life.&lt;/p&gt;
+
+&lt;p&gt;Inspired by operating their own neurons, discover the fascinating world of Regular Expressions.&lt;/p&gt;
+
+&lt;h2 id=&quot;presenting&quot;&gt;Presenting&lt;/h2&gt;
+
+&lt;p&gt;So, in order to start our trip, nothing like a presentation of the subject, because, after all, what’s Regular Expression?&lt;/p&gt;
+
+&lt;p&gt;Well sumerized, regular expression is a formal method to specify a text pattern.&lt;/p&gt;
+
+&lt;p&gt;More detailed, is a composition of symbols, characters with a special function, which grouped among themselves and with literal characters form a sequence, a expression. This is expression is interpreted as a rule that indicates a success or failure depending on the input. It’s exactly all the conditions of the expression.&lt;/p&gt;
+
+&lt;p&gt;Or as accepted variations also can be said that is:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;a way to find a text that you do not remember exactly how, but have no idea of possible variations;&lt;/li&gt;
+  &lt;li&gt;a way for a programmer to specify complex patterns that can be searched and married in a string;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Or formally speaking is:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;as a game, in the begining it’s difficult, but after knowing all the rules, just play and enjoy;&lt;/li&gt;
+  &lt;li&gt;as a recipe with ingredients and a proper order to add them to the mixture;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Above all, a Regular Expression is &lt;strong&gt;fun&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-history&quot;&gt;The History&lt;/h2&gt;
+
+&lt;p&gt;Regular expressions are originated in 1956, when mathematician &lt;a href=&quot;https://en.wikipedia.org/wiki/Stephen_Cole_Kleene&quot;&gt;Stephen Cole Kleene&lt;/a&gt; described &lt;a href=&quot;https://en.wikipedia.org/wiki/Regular_language&quot;&gt;regular languages&lt;/a&gt; using his mathematical notation called &lt;em&gt;regular sets&lt;/em&gt;. These arose in &lt;a href=&quot;https://en.wikipedia.org/wiki/Theoretical_computer_science&quot;&gt;theorical computer science&lt;/a&gt;, in the subfields of &lt;a href=&quot;https://en.wikipedia.org/wiki/Automata_theory&quot;&gt;automata theory&lt;/a&gt;(models of computation) and the description and classification of &lt;a href=&quot;https://en.wikipedia.org/wiki/Formal_language&quot;&gt;formal languages&lt;/a&gt;. Other early implementations of &lt;a href=&quot;https://en.wikipedia.org/wiki/Pattern_matching&quot;&gt;pattern matching&lt;/a&gt; include the &lt;a href=&quot;https://en.wikipedia.org/wiki/SNOBOL&quot;&gt;SNOBOL&lt;/a&gt; language, which did not use regular expressions, but instead its own pattern matching constructs.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Quickly introduction from &lt;a href=&quot;https://en.wikipedia.org/wiki/Regular_expression&quot;&gt;Wikipedia’s&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/history.png&quot; style=&quot;margin: 0 auto;&quot; alt=&quot;persons who brought regex|re&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In 1968, the UNIX pioneer &lt;em&gt;Ken Thompson&lt;/em&gt; published the article &lt;a href=&quot;http://www.fing.edu.uy/inco/cursos/intropln/material/p419-thompson.pdf&quot;&gt;Regular Expression Search Algorithm&lt;/a&gt; in Communications of the ACM (CACM), Volume 11. With code and prose he described a Regular Expression compiler that creates a IBM 7094 Object code. Thompson’s effort did not end there. He also implemented Kleene’s notation in the editor &lt;code class=&quot;highlighter-rouge&quot;&gt;QED&lt;/code&gt;. The aim was that the user could do advanced pattern matching in the files. The same feature appeared on the editor &lt;code class=&quot;highlighter-rouge&quot;&gt;ed&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;To search for a Regular Expression in &lt;code class=&quot;highlighter-rouge&quot;&gt;ed&lt;/code&gt; you wrote &lt;code class=&quot;highlighter-rouge&quot;&gt;g/&amp;lt;regular expression&amp;gt;/p&lt;/code&gt;. The letter &lt;code class=&quot;highlighter-rouge&quot;&gt;g&lt;/code&gt; means global search and &lt;code class=&quot;highlighter-rouge&quot;&gt;p&lt;/code&gt; are print the result. The command - &lt;code class=&quot;highlighter-rouge&quot;&gt;g/re/p&lt;/code&gt; resulted in the standalone program &lt;code class=&quot;highlighter-rouge&quot;&gt;grep&lt;/code&gt;, released in the fourth edition of UNIX 1973. However, &lt;code class=&quot;highlighter-rouge&quot;&gt;grep&lt;/code&gt; didn’t have a complete implementation of regular expressions, and it was no until 1979, in the seventh edition of UNIX the we were blessed with Alfred Aho’s &lt;code class=&quot;highlighter-rouge&quot;&gt;egrep&lt;/code&gt; - &lt;em&gt;extended grep&lt;/em&gt;. Now the circle was closed. The &lt;code class=&quot;highlighter-rouge&quot;&gt;egrep&lt;/code&gt; program translated any regular expression to a corresponding DFA.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/perl_problems.png&quot; style=&quot;margin: 0 auto;&quot; alt=&quot;wtf is regular expression?&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;alt&quot;&gt;
+    Some people, when confronted with a problem, think I know, I’ll use regular expressions. Now they have two problems. &lt;i&gt;Jamie Zawinski&lt;/i&gt;
+&lt;/div&gt;
+
+&lt;p&gt;It’s totally true if you do not pratice regex. In a very short period of time you’ll forget many of things to use. However, it’s totally understandable if you not use it everyday. Most of us do not use.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Regular Expressions are both terribly awkward and extremely useful. But they are a powerful tool for inspecting and processing strings. Properly understanding regular expressions will make you a more effective programmer.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-notation&quot;&gt;The Notation&lt;/h2&gt;
+
+&lt;p&gt;If you are using regex on a programming language. In JavaScript for example a regular expression is a type of an Object. In many cases, you can create a new regex by simple put slash &lt;code class=&quot;highlighter-rouge&quot;&gt;/&amp;lt;regex&amp;gt;/&lt;/code&gt; to start write.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;/abc/&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Where the pattern appears between slash characters, treats backslashes somewhat differently. First, since a forward slash ends the pattern, we need to put a backslash before any forward slash that we want to be part of the pattern. In addition, backslashes that aren’t part of special character codes (like &lt;code class=&quot;highlighter-rouge&quot;&gt;\n&lt;/code&gt;) will be &lt;em&gt;preserved&lt;/em&gt;, rather than ignored as they are in strings, and change the meaning of the pattern. Some characters, such as question marks and plus signs, have special meanings in regular expressions and must be preceded by a backslash if they are meant to represent the character itself.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;/eighteen&lt;span class=&quot;se&quot;&gt;\+&lt;/span&gt;/&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Knowing precisely what characters to backslash-escape when writing regular expressions requires you to know every character with a special meaning. For the time being, this may not be realistic, so when in doubt, just put a backslash before any character that is not a letter, number, or whitespace.&lt;/p&gt;
+
+&lt;h2 id=&quot;testing-by-matches&quot;&gt;Testing By Matches&lt;/h2&gt;
+
+&lt;p&gt;It’s more easily to find your pattern testing by a match. When you want one word, first take your firsts characters and improve you pattern to find what you want.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;se&quot;&gt;\d&lt;/span&gt;+ &lt;span class=&quot;c&quot;&gt;#=&amp;gt; 123456789&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The website I recommend to use is &lt;a href=&quot;http://regex101.com/&quot;&gt;regex101.com&lt;/a&gt;. You can put a string by example and test your pattern through test string below.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-linenos&quot; data-lang=&quot;linenos&quot;&gt;/[123456789]+/ # &quot;In 1992&quot; #=&amp;gt; 1992
+/[0-9]+/ # &quot;In 1992&quot; #=&amp;gt; 1992
+/\d+/ # &quot;In 1992&quot; #=&amp;gt; 1992&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Within square brackets, a dash (&lt;code class=&quot;highlighter-rouge&quot;&gt;-&lt;/code&gt;) between two characters can be used to indicate a range of characters, where the ordering is determined by the character’s Unicode number. Characters 0 to 9 sit right next to each other in this ordering (codes 48 to 57), so &lt;code class=&quot;highlighter-rouge&quot;&gt;[0-9]&lt;/code&gt; covers all of them and matches any digit.&lt;/p&gt;
+
+&lt;p&gt;There are a number of common character groups that have their own built-in shortcuts. Digits are one of them: &lt;code class=&quot;highlighter-rouge&quot;&gt;\d&lt;/code&gt; means the same thing as &lt;code class=&quot;highlighter-rouge&quot;&gt;[0-9]&lt;/code&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;\d&lt;/code&gt; - Any digit character&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;\w&lt;/code&gt; - An alphanumeric character (“word character”)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;\s&lt;/code&gt; - Any whitespace character (space, tab, newline, and similar)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;\D&lt;/code&gt; - A character that is not a digit&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;\W&lt;/code&gt; - A nonalphanumeric character&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;\S&lt;/code&gt; - A nonwhitespace character&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;.&lt;/code&gt; - Any character except for newline&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So you could match the date format with the following pattern:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;/&lt;span class=&quot;se&quot;&gt;\d\d&lt;/span&gt;-&lt;span class=&quot;se&quot;&gt;\d\d&lt;/span&gt;-&lt;span class=&quot;se&quot;&gt;\d\d\d\d&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\d\d&lt;/span&gt;:&lt;span class=&quot;se&quot;&gt;\d\d&lt;/span&gt;/ &lt;span class=&quot;c&quot;&gt;#=&amp;gt; 29-01-2016 15:20&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;That’s look completely awful, doesn’t it? It has way too many backslashes, producing background noise that makes it hard to spot the actual pattern expressed. We’ll see a slightly improved version of this pattern using range &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;/&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\d&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;1,2&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;-&lt;span class=&quot;se&quot;&gt;\d&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;1,2&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;-&lt;span class=&quot;se&quot;&gt;\d&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;4&lt;span class=&quot;o&quot;&gt;})&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\d&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;1,2&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;:&lt;span class=&quot;se&quot;&gt;\d&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;2&lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;/ &lt;span class=&quot;c&quot;&gt;#=&amp;gt; 29-01-2016 15:20&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Don’t be scared with the pattern we’ve used above. Analysing the string by parts, we can understand what she does. First we need find groups &lt;code class=&quot;highlighter-rouge&quot;&gt;()&lt;/code&gt;, the groups are used to break your pattern in parts. Let’s understand the pattern by parts. In pattern above, we have 2 groups, a date and a time &lt;code class=&quot;highlighter-rouge&quot;&gt;(\d{1,2}-\d{1,2}-\d{4})&lt;/code&gt; - &lt;code class=&quot;highlighter-rouge&quot;&gt;(\d{1,2}:\d{2})&lt;/code&gt;. By make this we break the pattern in two parts, now take the first part to break in another parts. Let’s get the part &lt;code class=&quot;highlighter-rouge&quot;&gt;\d{1,2}&lt;/code&gt; what do you think it does? It’s exactly what you think. He’ll take exactly two number of string. Understanding this you can understand others parts.&lt;/p&gt;
+
+&lt;p&gt;These backslash codes can also be used inside square brackets. For example, &lt;code class=&quot;highlighter-rouge&quot;&gt;[\d.]&lt;/code&gt; means any digit or a period character. But note that the period itself, when used between square brackets, loses its special meaning. The same goes for other special characters, such as &lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;To invert a set of characters—that is, to express that you want to match any character &lt;em&gt;except&lt;/em&gt; the ones in the set—you can write a caret (&lt;code class=&quot;highlighter-rouge&quot;&gt;^&lt;/code&gt;) character after the opening bracket.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;/[^&lt;span class=&quot;se&quot;&gt;\d&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;/&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;repeting-parts-of-a-pattern&quot;&gt;Repeting Parts of a Pattern&lt;/h2&gt;
+
+&lt;p&gt;We now know how to match a single digit. What if we want to match a whole number—a sequence of one or more digits?&lt;/p&gt;
+
+&lt;p&gt;When you put a plus sign (&lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt;) after something in a regular expression, it indicates that the element may be repeated more than once. Thus, &lt;code class=&quot;highlighter-rouge&quot;&gt;/\d+/&lt;/code&gt; matches one or more digit characters.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-linenos&quot; data-lang=&quot;linenos&quot;&gt;/\d+/ # 123 #=&amp;gt; true
+/\d+/ # &#39;&#39; #=&amp;gt; false
+/\d*/ # 123 #=&amp;gt; true
+/\d*/ # &#39;&#39; #=&amp;gt; true&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The star (&lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt;) has a similar meaning but also allows the pattern to match zero times. Something with a star after it never prevents a pattern from matching—it’ll just match zero instances if it can’t find any suitable text to match.&lt;/p&gt;
+
+&lt;h2 id=&quot;making-characters-optional&quot;&gt;Making characters optional&lt;/h2&gt;
+
+&lt;p&gt;A question mark makes a part of a pattern “optional”, meaning it may occur zero or one time. In the following example, the &lt;em&gt;u&lt;/em&gt; character is allowed to occur, but the pattern also matches when it’s missing.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;/neighbou?r/ &lt;span class=&quot;c&quot;&gt;# neighbor #=&amp;gt; true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;grouping-subexpression&quot;&gt;Grouping Subexpression&lt;/h2&gt;
+
+&lt;p&gt;To use an operator like &lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt; on more than one element at a time, you can use parentheses. A part of regular expression that is enclosed in parentheses counts as a single element as far as the operators following it are concerned.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;/boo+&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;hoo+&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;+/i &lt;span class=&quot;c&quot;&gt;#=&amp;gt; Boohoooohoohooo&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The first and second &lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt; characters apply only to the second &lt;code class=&quot;highlighter-rouge&quot;&gt;o&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;boo&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;hoo&lt;/code&gt;, respectively. The third &lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt; applies to the whole group &lt;code class=&quot;highlighter-rouge&quot;&gt;(hoo+)&lt;/code&gt;, matching one or more sequences like that.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;i&lt;/code&gt; at the end of the expression in the previous example makes this regular expression case insensitive, allowing it to match the uppercase &lt;code class=&quot;highlighter-rouge&quot;&gt;B&lt;/code&gt; in the input string, even though the pattern is itself all lowercase.&lt;/p&gt;
+
+&lt;h2 id=&quot;choice-patterns&quot;&gt;Choice Pattern’s&lt;/h2&gt;
+
+&lt;p&gt;So we want to know whether a piece of text contains not only a number but a number followed by one of the words &lt;code class=&quot;highlighter-rouge&quot;&gt;cow&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;table&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;mail&lt;/code&gt; and any other plural form of this words.&lt;/p&gt;
+
+&lt;p&gt;We could write tree regex to find this words, but there’s a nicer way. The pipe character (&lt;code class=&quot;highlighter-rouge&quot;&gt;|&lt;/code&gt;) denotes a choice between the pattern to its left and the pattern to its right. So I can say this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;/&lt;span class=&quot;se&quot;&gt;\b\d&lt;/span&gt;+ &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;cow|table|mail&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;s?&lt;span class=&quot;se&quot;&gt;\b&lt;/span&gt;/&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Parentheses can be used to limit the part of the pattern that the pipe operator applies to, and you can put multiple such operators next to each other to express a choice between more than two patterns.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-mechanics-of-matching&quot;&gt;The mechanics of matching&lt;/h2&gt;
+
+&lt;p&gt;Regular expressions can be thought of as flow diagrams. This is the diagram for the livestock expression removed from &lt;a href=&quot;http://eloquentjavascript.net/09_regexp.html&quot;&gt;Eloquent Javascript Book’s&lt;/a&gt;. And I recommend you to read the section on book if you want to know how to use regex with JS.&lt;/p&gt;
+
+&lt;p&gt;The following example is removed from the book because this is a good example to know about the mechanics of matching.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;/&lt;span class=&quot;se&quot;&gt;\b\d&lt;/span&gt;+ &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ping|cow|chicken&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;s?&lt;span class=&quot;se&quot;&gt;\b&lt;/span&gt;/
+&lt;span class=&quot;s2&quot;&gt;&quot;15 pigs&quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#=&amp;gt; true&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;&quot;15 pigchickens&quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#=&amp;gt; false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/mechanism_of_matching.svg&quot; style=&quot;margin: 0 auto;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Our expression matches a string if we can find a path from the left side of the diagram to the right side. We keep a current position in the string, and every time we move through a box, we verify that the part of the string after our current position matches that box.&lt;/p&gt;
+
+&lt;p&gt;So if we try to match “the 3 pigs” with our regular expression, our progress through the flow chart would look like this:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;At position 4, there is a word boundary, so we can move past the first box.&lt;/li&gt;
+  &lt;li&gt;Still at position 4, we find a digit, so we can also move past the second box.&lt;/li&gt;
+  &lt;li&gt;At position 5, one path loops back to before the second (digit) box, while the other moves forward through the box that holds a single space character. There is a space here, not a digit, so we must take the second path.&lt;/li&gt;
+  &lt;li&gt;We are now at position 6 (the start of “pigs”) and at the three-way branch in the diagram. We don’t see “cow” or “chicken” here, but we do see “pig”, so we take that branch.&lt;/li&gt;
+  &lt;li&gt;At position 9, after the three-way branch, one path skips the s box and goes straight to the final word boundary, while the other path matches an s. There is an s character here, not a word boundary, so we go through the s box.&lt;/li&gt;
+  &lt;li&gt;We’re at position 10 (the end of the string) and can match only a word boundary. The end of a string counts as a word boundary, so we go through the last box and have successfully matched this string.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Conceptually, a regular expression engine looks for a match in a string as follows: it starts at the start of the string and tries a match there. In this case, there is a word boundary there, so it’d get past the first box—but there is no digit, so it’d fail at the second box. Then it moves on to the second character in the string and tries to begin a new match there… and so on, until it finds a match or reaches the end of the string and decides that there really is no match.&lt;/p&gt;
+
+&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;Regular expressions are objects that represent patterns in strings. They use their own syntax to express these patterns.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/abc/&lt;/code&gt; - A sequence of characters&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/[abc]/&lt;/code&gt; - Any character from a set of characters&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/[^abc]/&lt;/code&gt; - Any character not in a set of characters&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/[0-9]/&lt;/code&gt; - Any character in a range of characters&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/x+/&lt;/code&gt; - One or more occurrences of the pattern x&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/x+?/&lt;/code&gt; - One or more occurrences, nongreedy&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/x*/&lt;/code&gt; - Zero or more occurrences&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/x?/&lt;/code&gt; - Zero or one occurrence&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/x{2,4}/&lt;/code&gt; - Between two and four occurrences&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/(abc)/&lt;/code&gt; - A group&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/a|b|c/&lt;/code&gt; - Any one of several patterns&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/\d/&lt;/code&gt; - Any digit character&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/\w/&lt;/code&gt; - An alphanumeric character (“word character”)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/\s/&lt;/code&gt; - Any whitespace character&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/./&lt;/code&gt; - Any character except newlines&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/\b/&lt;/code&gt; - A word boundary&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/^/&lt;/code&gt; - Start of input&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/$/&lt;/code&gt; - End of input&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;This is a quickly introduction about Regular Expressions. Still has much to learn about and discover new things to use in your day-to-day life. I hope you enjoy this post and we’ll see in the next’s posts about regex.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 29 Jan 2016 00:00:00 -0200</pubDate>
+        <link>http://rands0n.com/a-quick-dive-in-to-regular-expressions/</link>
+        <guid isPermaLink="true">http://rands0n.com/a-quick-dive-in-to-regular-expressions/</guid>
+
+        
+
+        
+      </item>
+    
+      <item>
+        <title>Making Computers Easier to Use</title>
+        <description>&lt;p&gt;This 23-minute film about UNIX was designed for students with an interest in engineering, math, computer science or other sciences. The film was made available to the public in December 1982. &lt;!--more--&gt;It covers different ways that UNIX could be employed practically in a computing environment. Another film about UNIX released at the same time, “The UNIX System: Making Computers More Productive,” was aimed at computer science majors and corporate trainees, and presented a more detailed discussion of the UNIX system and its various applications.&lt;/p&gt;
+
+&lt;div class=&quot;video&quot;&gt;
+    &lt;iframe src=&quot;https://www.youtube.com/embed/XvDZLjaCJuw&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Hosted by Victor Vyssotsky in a Carl-Sagan-esque turtleneck sweater, this film includes Dennis Ritchie, one of UNIX’s inventors, along with Bell Labs staffers and programmers Brian Kernighan, Catherine Ann Brooks, Lorinda Cherry, Alfred Aho, Nina Macdonald, and John Mashey.&lt;/p&gt;
+
+&lt;p&gt;Dennis Ritchie and Ken Thompson started work on what would become UNIX originally in 1969. They developed it to run on a DEC PDP-7 to begin with; it would eventually be ported to other computers. By 1976, UNIX was used in more than 30 Bell Labs groups, and there were UNIX installations at over 80 universities.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 24 Nov 2015 00:00:00 -0200</pubDate>
+        <link>http://rands0n.com/make-computers-easier-use/</link>
+        <guid isPermaLink="true">http://rands0n.com/make-computers-easier-use/</guid>
+
+        
+
+        
+      </item>
+    
+      <item>
+        <title>Upgraded My Blog and I&#39;m Using SMACSS</title>
+        <description>&lt;p&gt;Last week I updated the layout of my blog and I’m using SMACSS. On top of that, I prepared some topics that describe the structure I’m using!&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;First of all, the SMACSS it’s not the best methodology in the world. He helped me a lot to organize my CSS and maybe he can help you :) AND…&lt;/p&gt;
+
+&lt;p class=&quot;pull-quote&quot;&gt;
+    SMACSS IT&#39;S NOT A FRAMEWORK
+&lt;/p&gt;
+
+&lt;p&gt;SMACSS it’s not like a &lt;a href=&quot;http://getbootstrap.com&quot;&gt;Twitter Bootstrap&lt;/a&gt;, &lt;a href=&quot;http://purecss.io/&quot;&gt;Pure CSS&lt;/a&gt; and many others. It does not come with a set of classes for you to use. It’s just a set of ideias for you to organize your CSS in the best way. You’re not required to use SMACSS the way he is.&lt;/p&gt;
+
+&lt;p&gt;There is a &lt;a href=&quot;https://smacss.com/files/2012-03-15-workshop-essen.pdf&quot;&gt;document&lt;/a&gt; on the web about SMACSS workshop. Where the author explains what SMACSS and some points to you use it. On this basics, we can take 5 principles of SMACSS, they are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#categorization&quot;&gt;Categorization&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#naming-convention&quot;&gt;Naming Convention&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#uncouple&quot;&gt;Uncouple&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#increase-semantics&quot;&gt;Increase Semantics&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#state-based-design&quot;&gt;State Based Design&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;All you read about SMACSS here, it’s not a rule. Only ideas of how to organize the CSS of your project. I learned a lot about SMACSS reading posts and articles out of the document cited above.&lt;/p&gt;
+
+&lt;p&gt;Now, I’ll introduce you below 5 principles of SMACSS. Have fun!&lt;/p&gt;
+
+&lt;h2 id=&quot;categorization&quot;&gt;Categorization&lt;/h2&gt;
+
+&lt;p&gt;Every project needs some organization. And SMACSS will help you to to organize your project. He describe some points to separate your CSS. The points below was removed from the &lt;a href=&quot;https://smacss.com/book/categorizing&quot;&gt;docs&lt;/a&gt; on website. Let’s see:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Base&lt;/li&gt;
+  &lt;li&gt;Layout&lt;/li&gt;
+  &lt;li&gt;Module&lt;/li&gt;
+  &lt;li&gt;State&lt;/li&gt;
+  &lt;li&gt;Theme&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Base rules&lt;/strong&gt; are the defaults. They are almost exclusively single element selectors but it could include attribute selectors, pseudo-class selectors, child selectors or sibling selectors. Essentially, a base style says that wherever this element is on the page, it should look like &lt;em&gt;this&lt;/em&gt;.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nt&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;form&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#999&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#039&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:hover&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#03C&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Layout rules&lt;/strong&gt; divide the page into sections. Layouts hold one or more modules together.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Modules&lt;/strong&gt; are the reusable, modular parts of our design. They are the callouts, the sidebar sections, the product lists and so on.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;State rules&lt;/strong&gt; are ways to describe how our modules or layouts will look when in a particular state. Is it hidden or expanded? Is it active or inactive? They are about describing how a module or layout looks on screens that are smaller or bigger. See these CSS classes to understand:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.is-active&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.is-hidden&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Finally, &lt;strong&gt;Theme rules&lt;/strong&gt; are similar to state rules in that they describe how modules or layouts might look. Most sites don’t require a layer of theming but it is good to be aware of it.&lt;/p&gt;
+
+&lt;h2 id=&quot;naming-convention&quot;&gt;Naming Convention&lt;/h2&gt;
+
+&lt;p&gt;Naming conventions clarify intents. We see an example of how to define a nomenclature for their classes. Where you set the whole class from the layout of start with the &lt;code class=&quot;highlighter-rouge&quot;&gt;-l&lt;/code&gt; prefix.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.l-header&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.l-sidebar&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;20%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.l-content&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;80%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Specificity is dangerous. Always give preference to classes instead of ID’s.&lt;/p&gt;
+
+&lt;h2 id=&quot;uncouple&quot;&gt;Uncouple&lt;/h2&gt;
+
+&lt;p&gt;We must be abuse of reuse of code. Causing any style disturb a module or any other thing you want to style again. Theoretically, it should be “reset”, ie the default browser in order to apply our style.&lt;/p&gt;
+
+&lt;p&gt;Thinking about it, we should not base our selectors in ID’s. Since we want our code to be reused by another element. We must use class instead of ID’s or HTML Elements.&lt;/p&gt;
+
+&lt;p&gt;Use ID’s with grave caution.&lt;/p&gt;
+
+&lt;h2 id=&quot;increase-semantics&quot;&gt;Increase Semantics&lt;/h2&gt;
+
+&lt;p&gt;We can have a button element to the designer his behavior is a link. Or we can have an &lt;code class=&quot;highlighter-rouge&quot;&gt;a&lt;/code&gt; element to the designer his behavior is a button. So our classes must have names that are linked to it’s function. See an example below a link and button:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;style &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;.link&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;text-decoration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;underline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;.button&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/style&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://randsonjs.com&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;link&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Link&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://randsonjs.com&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;button&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Button&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;We can also have &lt;code class=&quot;highlighter-rouge&quot;&gt;div&lt;/code&gt; that behave like lists and items lists:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;style &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;.list&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;4px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;.list&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.item-list&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inline-block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/style&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;list&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;item-list&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Lorem1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;item-list&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Lorem2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The ideia here is to keep the semantics. Many carousel jQuery plugins use &lt;code class=&quot;highlighter-rouge&quot;&gt;div&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;p&lt;/code&gt; to declare their items. Thus we maintain our semantics and use the plugin insted of simply leaves you to use it for that.&lt;/p&gt;
+
+&lt;h2 id=&quot;state-based-design&quot;&gt;State Based Design&lt;/h2&gt;
+
+&lt;p&gt;The last is State Based Design. He proposes that we use classes to declare states of elements. Classes as &lt;code class=&quot;highlighter-rouge&quot;&gt;.is-active&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;.is-hidden&lt;/code&gt; can be used to improve the semantics. Also instead of you use a jQuery selector to remove the DOM element. You cut and adds class from element.&lt;/p&gt;
+
+&lt;p&gt;See an example about state classes:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.is-active&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.is-hidden&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.is-disable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;opacity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;And abuse of reuse.&lt;/p&gt;
+
+&lt;h2 id=&quot;considerations&quot;&gt;Considerations&lt;/h2&gt;
+
+&lt;p&gt;All these thoughts about SMACSS is good to keep in mind. You’re not obliged to follow them. In fact, SMACSS is free for you to do it your way. See what’s best of you and use.&lt;/p&gt;
+
+&lt;p&gt;SMACSS is free, be you too :)&lt;/p&gt;
+</description>
+        <pubDate>Mon, 06 Apr 2015 00:00:00 -0300</pubDate>
+        <link>http://rands0n.com/upgraded-my-blog-and-iam-using-smacss/</link>
+        <guid isPermaLink="true">http://rands0n.com/upgraded-my-blog-and-iam-using-smacss/</guid>
+
+        
+          <category>css</category>
+        
+          <category>smacss</category>
+        
+
+        
+      </item>
+    
+      <item>
+        <title>Source Code Control System</title>
+        <description>&lt;p&gt;One of the most important things we look for in a user interface is the &lt;code class=&quot;highlighter-rouge&quot;&gt;UNDO&lt;/code&gt; button — a button to redeem us for our mistakes. It’s even better when the enviroment gives us a number of support between undo and redo, so we can go back and fix the error.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;But what if the mistake happened last week, and you’ve turned your computer on and off ten times since then? Well, that’s one of many benefits of using a source code control system: it’s a giant &lt;code class=&quot;highlighter-rouge&quot;&gt;UNDO&lt;/code&gt; key — a project-wide time machine that can return you to those halcyon days of last week, when the code actually compile and run.&lt;/p&gt;
+
+&lt;p&gt;Source Code Control System, or the more widely scope &lt;em&gt;configuration management systems&lt;/em&gt;, keep track of every change you make in your source code or documentation. The better ones can keep track of compiler and OS version as well. With a properly configured source code control system, you can &lt;em&gt;always go back to a previous version of your software&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;But a Source Code Control System(&lt;a href=&quot;https://en.wikipedia.org/wiki/Source_Code_Control_System&quot;&gt;SCSS&lt;/a&gt;) does far more than undo mistakes. A good SCCS will let you track changes, answering question such as: Who made changes in this line of code? What’s the difference between the current version and the week’s? Which files get changed most often? This kind of information is invaluable for bug-tracking, audit, performance and quality purpose.&lt;/p&gt;
+
+&lt;p&gt;An SCSS will also let you identify releases of your software. Once identified, you will always be able to go back and regenarate the release, independent of changes that may have occurred later.&lt;/p&gt;
+
+&lt;p&gt;We often to use SCSS to manage branches in the development tree. For example, once you have released some software, you’ll normally want to continue developing for the next release. At the same time, you’ll need to deal with bugs in the current release, shipping fixed versions to clients. You’ll want these bug fixes rolled into the next release(if appropriate), but you don’t want ship code under developement to clients.&lt;/p&gt;
+
+&lt;p&gt;With an SCSS you can generate branches in the development tree each time you generate a release. You apply bug fixes to code in the branch and continue developing on the main trunk. Since the bug fixes may be relevant to the main trunk as well, some system allow you to merge selected changes from the branch back into the main trunk automatically.&lt;/p&gt;
+
+&lt;p&gt;Source Code Control Systems may keep the files they maintain in a central repository — a great candidate for archiving.&lt;/p&gt;
+
+&lt;p&gt;Finally, some products may allow two or more users to be working concurrently on the same set of files, even making concurrent changes in the same file. The system then manage the merge of these changes when the files are sent back to the repository. Although seemingly risky, such system work well in pratice on project of all sizes.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Always Use Source Code Control&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Always. Even if you a single-person team in a one-week project. Even if it’s a “throw-away” prototype. Even if the stuff you’re working on isn’t source code. Make sure that &lt;em&gt;everything&lt;/em&gt; is under source code control — documentation, phone lists, memos to vendors, the little shell script — everything. We routinely use source code control on just about everything we type(including this text of this post). Even if you’re not working on a project, our day-to-day work is a secured in a repository.&lt;/p&gt;
+
+&lt;h2 id=&quot;source-code-control-and-builds&quot;&gt;Source Code Control and Builds&lt;/h2&gt;
+
+&lt;p&gt;There is a tremendous hidden benefit in having an entire project under the umbrella of a source code control system: you can have a product builds that are &lt;em&gt;automatic&lt;/em&gt; and &lt;em&gt;repeatable&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;The project build mechanism can pull the latest source out of repository automatically. It can run in the middle of the night after everyone(hopefully) gone home. You can run automatic regression tests to ensure that day’s coding dind’t break anything. The automation of the build ensures consistency — there are no manual procedures, and you won’t need developers remembering to copy code into some special area.&lt;/p&gt;
+
+&lt;p&gt;The build is repeatable because you can always rebuild the source it existed on a given date.&lt;/p&gt;
+
+&lt;h2 id=&quot;but-my-team-inst-using-source-code-control&quot;&gt;But My Team Ins’t Using Source Code Control&lt;/h2&gt;
+
+&lt;p&gt;Shame on them! Sounds like an opportunity to do some evangelizing! However, while you wait for them to see the light, perhaps you should implement you own private source code control. Use one of the &lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_version_control_software&quot;&gt;free available tools&lt;/a&gt; and make a point of keeping your personal work safely tucked into a repository(as well as doing whatever project your project require).&lt;/p&gt;
+
+&lt;p&gt;Remembering the SCSS works outside of a workplace.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 13 Mar 2015 00:00:00 -0300</pubDate>
+        <link>http://rands0n.com/source-code-control-system/</link>
+        <guid isPermaLink="true">http://rands0n.com/source-code-control-system/</guid>
+
+        
+
+        
+      </item>
+    
+      <item>
+        <title>Guia para Encontrar Desenvolvedores Qualificados</title>
+        <description>&lt;p&gt;Achar um bom desenvolvedor é difícil.&lt;/p&gt;
+
+&lt;p&gt;As pessoas sempre reclamam de poucos candidatos qualificados que recebem. Eles postam suas aberturas de trabalho para cada lista conhecida. Eles fazem tudo isso na esperança de que uma pilha maior de curriculum vai render pelo menos um contrato que chegue a seus padrões.&lt;/p&gt;
+
+&lt;p&gt;O problema dessa estratégia é que ela não vai melhorar a qualidade de seus candidatos. Mais curriculos significa mais tempo, considerando as pessoas que você nunca vai contratar. E se sua empresa for como a maioria das outras, você não tempo para isso.&lt;/p&gt;
+
+&lt;p&gt;A melhor de forma de contratar desenvolvedores não é esperar que eles venha até você. É correr atrás e acha-los. Como a maioria de nós sabemos, o modo tradicional de contratar está defasado.&lt;/p&gt;
+
+&lt;p&gt;Nesse artigo, irei mostrar uma forma diferente de encontrar um desenvolvedor para trabalhar em sua empresa. O que eu espero é ajudar o maior número de pessoas possíveis.&lt;/p&gt;
+
+&lt;h2 id=&quot;a-estratgia&quot;&gt;A Estratégia&lt;/h2&gt;
+
+&lt;p&gt;Toda empresa que conhecemos usam o metódo de recomendação ou qualquer outro metódo para contratar desenvolvedores. Eles eliminam uma boa parte das pessoas que não fazem aquele trabalho para qual está contratando. Alguém em seu time conhece algum desenvolvedor que consegue fazer o que você precisa. Marcam uma entrevista e então a empresa contrata.&lt;/p&gt;
+
+&lt;p&gt;O problema é que muitos desenvolvedores não conhecem bons desenvolvedores para contratar. E a maioria das empresas(principalmente as pequenas) fazem você ficar sem referências rapidamente.&lt;/p&gt;
+
+&lt;p&gt;A técnica que estou recomendando visa captar os melhores aspectos de referências pessoais sem a necessidade de conhecimento em primeira mão. Essa técnica destina-se a encontrar pessoas que já tenha um conhecimento provado para exercer tal função ou cargo.&lt;/p&gt;
+
+&lt;p&gt;Como? Simples, olhe no &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;open-source&quot;&gt;Open Source&lt;/h2&gt;
+
+&lt;p&gt;OK, óbviamente é mais complicado olhar no GitHub. GitHub tem milhões de usuários e a maioria deles não vai servir para você.&lt;/p&gt;
+
+&lt;p&gt;Com isso o desafio de encontrar um bom desevenvolvedor está mais estreito.&lt;/p&gt;
+
+&lt;p&gt;Se sua empresa é uma agência, a maioria dos softwares que você usa é Open Source. Você provavelmente vai querer contratar alguém que saiba usar isso. É ai onde o Open Source entra, você não pode ver só o código. Também pode dar uma olhada nos colaboradores.&lt;/p&gt;
+
+&lt;p&gt;Você pode pegar os autores da ferramenta em questão, entrar em contato e conversar sobre uma proposta de trabalho. Mas não se engane, caras como John Resig, Douglas Crockford, entre outros. Você não conseguirá contratar. Ou possa ser que eles realmente querem trabalhar para você. Mas voltando ao assunto. Existem os colaboradores.&lt;/p&gt;
+
+&lt;p&gt;Uma rápida olhada na aba contributors do projeto. Você pode ver os colaboradores(milhões deles). Analisar suas contribuições que fez naquele repositório e ver suas qualidades. Se ele está envolvido com a ferramenta, por menor que seja sua contribuição. Ele faz parte daquele grupo de usuários que sabe usar a ferramenta. E é isso que você está procurando. Pessoas que saibam usar aquela ferramenta/software em questão.&lt;/p&gt;
+
+&lt;p&gt;Sendo mais especifico, você viu milhares de colaboradores no projeto e não sabe ainda por onde começar. Uma dica é ir abrindo o perfil de cada um, analisando suas contribuições e vendo seus repositórios. Quanto mais likes o repositório estiver, mais popular ele é. Os seguidores daquele perfil também contam muito. Quanto mais seguidores a pessoa estiver melhor. Quer dizer que ela contribui para a comunidade, não importa a forma. Sendo de melhoria de código, palestras, ou qualquer coisa. Mais seguidores significa que mais pessoas conhecem essa pessoa ou gostaram de suas contribuições.&lt;/p&gt;
+
+&lt;p&gt;Olhando as organizações que a pessoa participa, você vê em qual nicho ela está inserida.&lt;/p&gt;
+
+&lt;p&gt;Aqui está um lista de repositórios que você pode ver seus colaboradores e olhar por sí mesmo os colaboradores. Vê seus perfils e analisar o código produzido por ele.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/twbs/bootstrap&quot;&gt;Bootstrap&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/angular/angular.js&quot;&gt;AngularJS&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jquery/jquery&quot;&gt;jQuery&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/yahoo/pure&quot;&gt;Pure CSS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Existem milhões, procure uma que você deseja que o profissional já chega sabendo em sua empresa e procure o profissional adequado para você.&lt;/p&gt;
+
+&lt;h2 id=&quot;o-problema&quot;&gt;O problema!&lt;/h2&gt;
+
+&lt;p&gt;Você procurou nas organizações, repositórios e encontrou um cara que manja do assunto. Ele tem alguns repositórios no seu perfil que fazem uso daquela ferramenta que você usa na empresa. Gostou muito do trabalho dele e gostaria de tê-lo na sua empresa.&lt;/p&gt;
+
+&lt;p&gt;O problema que ele é de outro estado, muitas veses de outro país. Então como vou contratar essa pessoa para trabalhar em minha empresa? Uma resposta: &lt;strong&gt;trabalho remóto&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Entrando em contato com o profisional em questão você poderá discutir horários de trabalho, salário e beneficios que você pode dar a seu novo funcionário. E ai, você tem uma certa garantia de que pegou o profissional certo para trabalhar em sua empresa. Diretamente da ferramenta que deseja que ele saiba.&lt;/p&gt;
+
+&lt;p&gt;Sabemos que podem ocorrer outras implicações de pessoas a distância. Analise a melhor forma para contratar este profissional e faça suas considerações.&lt;/p&gt;
+
+&lt;h2 id=&quot;porque-colaboradores&quot;&gt;Porque Colaboradores?&lt;/h2&gt;
+
+&lt;p&gt;Sabemos que muitos profissionais não estão presentes nos repositórios/organizações que você deseja. E que muitas pessoas nem sequer fizeram uma contribuição naquele repositório. Mas que sabe usá-las muito bem e algumas delas já fizeram muitos projetos com ela.&lt;/p&gt;
+
+&lt;p&gt;Pensando sobre estes profissionais. Se eles não chegaram a compartilhar seus códigos ou no minimo reportar um problema para o repositório. Certamente ele também não chegará para você contratá-lo. Lógico que existem exceções e existe muitas pessoas por ai que não compartilham seus códigos e são muito bons profissionais.&lt;/p&gt;
+
+&lt;p&gt;Mas porque não entrar em contato com uma pessoa que conhece da ferramenta? Que participa do seu desenvolvimento. Mesmo que seja reportando bugs, fazendo testes para a ferramenta. Existem várias formas de você analisar essa pessoa que você deseja contratar.&lt;/p&gt;
+
+&lt;p&gt;No GitHub você encontrará o profissional certo, um membro de comunidade, participante de eventos relacionados a área em questão. E por final, um amante da tecnologia.&lt;/p&gt;
+
+&lt;h2 id=&quot;consideraes&quot;&gt;Considerações&lt;/h2&gt;
+&lt;p&gt;Essa foi umas das formas que desejo compartilhar com vocês. Espero poder ajudá-lo nessa luta para encontrar um bom profissional.&lt;/p&gt;
+
+&lt;p&gt;É lógico que existem várias outras formas e que você pode encontrar profissionais para sua empresa sem precisar usar o mundo Open Source para isso. Espero que considere meu pensamento e dê oportunidades para as pessoas que ajudam e muito a comunidade Open Source. Elas merecem uma atenção em especial.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 19 Feb 2015 00:00:00 -0200</pubDate>
+        <link>http://rands0n.com/guia-para-encontrar-desenvolvedores-qualificados/</link>
+        <guid isPermaLink="true">http://rands0n.com/guia-para-encontrar-desenvolvedores-qualificados/</guid>
+
+        
+
+        
+      </item>
+    
+      <item>
+        <title>How to Find Qualified Developers</title>
+        <description>&lt;p class=&quot;availables&quot;&gt;
+    Also available in &lt;a href=&quot;/guia-para-encontrar-desenvolvedores-qualificados/&quot;&gt;Portuguese&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;Finding a good developer is hard.&lt;/p&gt;
+
+&lt;p&gt;People always complain of few qualified candidates who receive. They post their job openings know to each list. They do all this in the hope that a larger stack of resumes will yield at least one contract that comes to your standards.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;The problem with this strategy is that it will not improve the quality of their candidate. More CVs means more time considering the people you will never hire. And if your company is most like others, you don’t have time for this.&lt;/p&gt;
+
+&lt;p&gt;The best way to find good developers is not to wait for them to come to you. You go out and find them. As most of us know, the traditional way of hiring is outdated.&lt;/p&gt;
+
+&lt;p&gt;In this article, I’ll show you a different way to find good developers to work in your company. What I hope is to help as many people possible.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-strategy&quot;&gt;The Strategy&lt;/h2&gt;
+
+&lt;p&gt;Every company we know use the method of recommendation or any another method to hire developers. They eliminate a good portion of people who do not the job for which you are hiring. Someone on your team know any developer who can do what you need. Mark an interview, and then company hires.&lt;/p&gt;
+
+&lt;p&gt;The problem is that many developers do not know good developers. And most companies(specially small) are no references quickly.&lt;/p&gt;
+
+&lt;p&gt;The technique I recommend aims to capture the best aspects of references without firsthand knowledge. This technique is intended to find people who already have a proven knowledge to perform this function.&lt;/p&gt;
+
+&lt;p&gt;How? Simple, look at &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;open-source&quot;&gt;Open Source&lt;/h2&gt;
+
+&lt;p&gt;Okay, it’s obviously more complicated look at GitHub. GitHub have million users and the most of them will not do for you.&lt;/p&gt;
+
+&lt;p&gt;Thus the challenge of finding a good developer is narrower.&lt;/p&gt;
+
+&lt;p&gt;If you company is an agency, the most of software you use is Open Source. And you’ll probably want to hire someone who knows how to use it. That’s where the open source comes in, you can not only see the code. You can also take a look at contributors.&lt;/p&gt;
+
+&lt;p&gt;You can take the tool authors in question, to contact and talk about a job offer. But make no mistake, guys like John Resig, Douglas Crockford, among others. You can not hire them. Or it may be that they really want works for you. But, back to the subject. Exist the collaborators.&lt;/p&gt;
+
+&lt;p&gt;A quick look at the contributors flap design. You can see the colaborators(million of them). Analyze their contributions at the repository and see their qualities. If he is involved with the tool, no matter how small is your contribution. He is part of that group of users that make use of the tool. And that’s what you’re looking for, people who know how to use that tool in question.&lt;/p&gt;
+
+&lt;p&gt;Being more specific, you saw thousands of contributors in the project and still not know where to start. A tip is to go by opening the profile of each, analyzing their contributions and seeing their repositories. The more likes the repository is, more popular it is. The followers of this repository also have very. The more followers a person is, better. So she contributes to the community, no matter way. Being improvement code, lectures, anything. More followers means more people know that person or liked their contributions.&lt;/p&gt;
+
+&lt;p&gt;Looking organizations that the person participes, you can see on which niche it is inserted.&lt;/p&gt;
+
+&lt;p&gt;Here is a list of repositories you can see your contributors.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/twbs/bootstrap&quot;&gt;Bootstrap&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/angular/angular.js&quot;&gt;AngularJS&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jquery/jquery&quot;&gt;jQuery&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/yahoo/pure&quot;&gt;Pure CSS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There are millions, look the better for you.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-problem&quot;&gt;The Problem!&lt;/h2&gt;
+
+&lt;p&gt;You searched in organizations, repositories and found a guy who knows the subject. It has some repositories on your profile that make use of that tool you use in the company. Like much of his work and would like to have it on your company.&lt;/p&gt;
+
+&lt;p&gt;The problem is that he is from another state, often in another country. So how I hire that person to work in my company? One answer: &lt;strong&gt;remote work&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;By contacting the professional, you can discuss working hours wages and benefits that you can give to your new employee. And then, you have a guarantee that caught the right professional to work on your business. Directly from the tool you want to let them know.&lt;/p&gt;
+
+&lt;p&gt;We know that that you may experience other implications of people away.&lt;/p&gt;
+
+&lt;p&gt;Examine how best to hire this professional and make your considerations.&lt;/p&gt;
+
+&lt;h2 id=&quot;why-colaborators&quot;&gt;Why Colaborators?&lt;/h2&gt;
+
+&lt;p&gt;We know that many professionals are not present in the repositories or organizations you want. And many people did not cooperate with that project. But they know how to use these tools very well. And many have already made quite a few projects with her.&lt;/p&gt;
+
+&lt;p&gt;Thinking about these professionals. If they did not get to share their codes or minimum report a problem to the repository. Certainly he did not come for you to hire him. We know that there are exceptions and there are many people out there who do not share their code and are great professionals.&lt;/p&gt;
+
+&lt;p&gt;But, why not get in touch with a person who knows the tool? Participating in it’s development. Even if it bug report, testing to the tool. There are several ways you look at that person you want to hire.&lt;/p&gt;
+
+&lt;p&gt;In GitHub you’ll find the right professional, one community member, event participant related to the area in question. And by the end, a lover of technology.&lt;/p&gt;
+
+&lt;h2 id=&quot;considerations&quot;&gt;Considerations&lt;/h2&gt;
+
+&lt;p&gt;This was one of the ways I want to share with you. I hope I can help you in fight to find a good developer.&lt;/p&gt;
+
+&lt;p&gt;We know that there are several ways for you to find developers for your company without using a Open Source World for that. I hope you find my thoughts and give opportunities for people to help the Open Source World. They deserve attention in particular.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 11 Feb 2015 00:00:00 -0200</pubDate>
+        <link>http://rands0n.com/how-to-find-qualified-developers/</link>
+        <guid isPermaLink="true">http://rands0n.com/how-to-find-qualified-developers/</guid>
+
+        
+
+        
+      </item>
+    
+      <item>
+        <title>The Node Frameworks Contributors</title>
+        <description>&lt;p&gt;I want express my gratitude to &lt;a href=&quot;https://twitter.com/azat_co&quot;&gt;Azat Mardan&lt;/a&gt; who quoted me on &lt;a href=&quot;http://webapplog.com/the-node-frameworks-contributor/&quot;&gt;their website&lt;/a&gt; about contributions I made on your repository.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;In fact, I’m the #1 contributor on the project right now. Thank you for quoted me! These quotes inspire me even more.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center&quot;&gt;
+    &lt;img src=&quot;http://m03s6dh33i0jtc3uzfml36au.wpengine.netdna-cdn.com/wp-content/uploads/Screenshot-2014-12-07-10.34.57.png&quot; style=&quot;margin: 0 auto;&quot; alt=&quot;Uma foto com descrição dos commits&quot; title=&quot;Uma foto com descrição dos commits&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;If you don’t know what the &lt;a href=&quot;http://nodeframework.com/&quot;&gt;Node Frameworks project&lt;/a&gt; is about—check it out. The mission of this resource is to provide recommendations and one place for discovering Node.js frameworks and tutorials/examples for them. The stats for each library is really interesting to compare.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 29 Dec 2014 00:00:00 -0200</pubDate>
+        <link>http://rands0n.com/the-node-frameworks-contributors/</link>
+        <guid isPermaLink="true">http://rands0n.com/the-node-frameworks-contributors/</guid>
+
+        
+
+        
+      </item>
+    
+  </channel>
+</rss>

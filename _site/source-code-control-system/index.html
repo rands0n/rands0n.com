@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Source Code Control System &mdash; Randson Oliveira</title>
+
+  <!-- Meta -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="Randson Oliveira">
+  <meta name="application-name" content="Randson Oliveira">
+  <meta name="theme-color" content="#FEFEFE">
+
+  <!-- Facebook -->
+  <meta property="og:title" content="Source Code Control System &mdash; Randson Oliveira">
+  <meta property="og:site_name" content="Randson Oliveira">
+  <meta property="og:url" content="http://rands0n.com/source-code-control-system/">
+  <meta property="og:type" content="blog">
+  <meta property="og:image" content="/images/rands0n.jpg">
+  <meta property="og:description" content="">
+
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/images/rands0n.jpg">
+
+  <!-- Feed -->
+  <link rel="alternate" type="application/rss+xml" href="index.xml">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body class="post">
+  <div class="container">
+    <h1 class="site-title">
+      <a href="/">Randson Oliveira</a>
+
+      
+        &raquo;
+
+        Source Code Control System
+      
+    </h1>
+
+
+<div class="post post-page">
+  <div class="post-meta">
+    <time
+      class="post-meta-date"
+      datetime="2015-03-13 00:00:00 -0300">
+      March 13, 2015
+    </time>
+    <!-- /post-meta-date -->
+
+    &mdash;
+
+    <span
+      class="read-time"
+      title="Estimate read time"
+      alt="Estimate read time">
+      
+      4 min read
+    </span>
+  </div>
+  <!-- /post-meta -->
+
+  <div class="post-content">
+    <p>One of the most important things we look for in a user interface is the <code class="highlighter-rouge">UNDO</code> button — a button to redeem us for our mistakes. It’s even better when the enviroment gives us a number of support between undo and redo, so we can go back and fix the error.</p>
+
+<!--more-->
+
+<p>But what if the mistake happened last week, and you’ve turned your computer on and off ten times since then? Well, that’s one of many benefits of using a source code control system: it’s a giant <code class="highlighter-rouge">UNDO</code> key — a project-wide time machine that can return you to those halcyon days of last week, when the code actually compile and run.</p>
+
+<p>Source Code Control System, or the more widely scope <em>configuration management systems</em>, keep track of every change you make in your source code or documentation. The better ones can keep track of compiler and OS version as well. With a properly configured source code control system, you can <em>always go back to a previous version of your software</em>.</p>
+
+<p>But a Source Code Control System(<a href="https://en.wikipedia.org/wiki/Source_Code_Control_System">SCSS</a>) does far more than undo mistakes. A good SCCS will let you track changes, answering question such as: Who made changes in this line of code? What’s the difference between the current version and the week’s? Which files get changed most often? This kind of information is invaluable for bug-tracking, audit, performance and quality purpose.</p>
+
+<p>An SCSS will also let you identify releases of your software. Once identified, you will always be able to go back and regenarate the release, independent of changes that may have occurred later.</p>
+
+<p>We often to use SCSS to manage branches in the development tree. For example, once you have released some software, you’ll normally want to continue developing for the next release. At the same time, you’ll need to deal with bugs in the current release, shipping fixed versions to clients. You’ll want these bug fixes rolled into the next release(if appropriate), but you don’t want ship code under developement to clients.</p>
+
+<p>With an SCSS you can generate branches in the development tree each time you generate a release. You apply bug fixes to code in the branch and continue developing on the main trunk. Since the bug fixes may be relevant to the main trunk as well, some system allow you to merge selected changes from the branch back into the main trunk automatically.</p>
+
+<p>Source Code Control Systems may keep the files they maintain in a central repository — a great candidate for archiving.</p>
+
+<p>Finally, some products may allow two or more users to be working concurrently on the same set of files, even making concurrent changes in the same file. The system then manage the merge of these changes when the files are sent back to the repository. Although seemingly risky, such system work well in pratice on project of all sizes.</p>
+
+<blockquote>
+  <p>Always Use Source Code Control</p>
+</blockquote>
+
+<p>Always. Even if you a single-person team in a one-week project. Even if it’s a “throw-away” prototype. Even if the stuff you’re working on isn’t source code. Make sure that <em>everything</em> is under source code control — documentation, phone lists, memos to vendors, the little shell script — everything. We routinely use source code control on just about everything we type(including this text of this post). Even if you’re not working on a project, our day-to-day work is a secured in a repository.</p>
+
+<h2 id="source-code-control-and-builds">Source Code Control and Builds</h2>
+
+<p>There is a tremendous hidden benefit in having an entire project under the umbrella of a source code control system: you can have a product builds that are <em>automatic</em> and <em>repeatable</em>.</p>
+
+<p>The project build mechanism can pull the latest source out of repository automatically. It can run in the middle of the night after everyone(hopefully) gone home. You can run automatic regression tests to ensure that day’s coding dind’t break anything. The automation of the build ensures consistency — there are no manual procedures, and you won’t need developers remembering to copy code into some special area.</p>
+
+<p>The build is repeatable because you can always rebuild the source it existed on a given date.</p>
+
+<h2 id="but-my-team-inst-using-source-code-control">But My Team Ins’t Using Source Code Control</h2>
+
+<p>Shame on them! Sounds like an opportunity to do some evangelizing! However, while you wait for them to see the light, perhaps you should implement you own private source code control. Use one of the <a href="https://en.wikipedia.org/wiki/List_of_version_control_software">free available tools</a> and make a point of keeping your personal work safely tucked into a repository(as well as doing whatever project your project require).</p>
+
+<p>Remembering the SCSS works outside of a workplace.</p>
+
+  </div>
+  <!-- /post-content -->
+</div>
+<!-- /post post-page -->
+
+<h3>About Randson Oliveira</h3>
+
+<div>
+  <img src="/images/rands0n.jpg" style="width: 150px; float: left; margin: 0 1.4em 1.4em 0;" alt="">
+
+  <p>
+    Hey! I'm a developer trying building some rock solid systems using Javascript and Ruby. Besides programming I enjoy music and video games.
+  </p>
+
+  <p>
+    I'd love to hear your questions and comments on this article! <a href="https://twitter.com/rands0n">Mention me on twitter</a> or <a href="mailto:orandson@gmail.com">shoot me an email</a>.
+  </p>
+</div>
+
+
+    <div class="footer">
+      ----<br>
+      Copyright 2016 <a href="/">Randson Oliveira</a>, Powered by <a href="http://jekyllrb.com">Jekyll</a>.
+    </div>
+
+  </div>
+  <!-- /container -->
+
+</body>
+</html>
+

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Open a GitHub Pull Request with Hub &mdash; Randson Oliveira</title>
+
+  <!-- Meta -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="Randson Oliveira">
+  <meta name="application-name" content="Randson Oliveira">
+  <meta name="theme-color" content="#FEFEFE">
+
+  <!-- Facebook -->
+  <meta property="og:title" content="Open a GitHub Pull Request with Hub &mdash; Randson Oliveira">
+  <meta property="og:site_name" content="Randson Oliveira">
+  <meta property="og:url" content="http://rands0n.com/open-github-pull-request-hub/">
+  <meta property="og:type" content="blog">
+  <meta property="og:image" content="/images/rands0n.jpg">
+  <meta property="og:description" content="">
+
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/images/rands0n.jpg">
+
+  <!-- Feed -->
+  <link rel="alternate" type="application/rss+xml" href="index.xml">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body class="post">
+  <div class="container">
+    <h1 class="site-title">
+      <a href="/">Randson Oliveira</a>
+
+      
+        &raquo;
+
+        Open a GitHub Pull Request with Hub
+      
+    </h1>
+
+
+<div class="post post-page">
+  <div class="post-meta">
+    <time
+      class="post-meta-date"
+      datetime="2016-04-13 00:00:00 -0300">
+      April 13, 2016
+    </time>
+    <!-- /post-meta-date -->
+
+    &mdash;
+
+    <span
+      class="read-time"
+      title="Estimate read time"
+      alt="Estimate read time">
+      
+      4 min read
+    </span>
+  </div>
+  <!-- /post-meta -->
+
+  <div class="post-content">
+    <p>Both in my professional life and personal life working as a open source contributor I use Git and Git<a href="https://hub.github.com/">Hub</a> a lot of time. GitHub publishes a command-line tools called <a href="https://hub.github.com/">Hub</a>, which is more convenient way than the website for doing a few specific tasks and in particular I’ve been using it more and more for opening pull requests(aka PR’s).</p>
+
+<p>It’s fairly common to alias your <code class="highlighter-rouge">git</code> command to use with <code class="highlighter-rouge">hub</code> command, which gives you all your existing Git functionality with a few special GitHub-aware features like the <code class="highlighter-rouge">pull-request</code> command.</p>
+
+<h2 id="git--hub--github">Git + Hub = GitHub</h2>
+
+<p>First, you need to install <a href="https://git-scm.com/download">Git</a> on your machine if it is not installed 😊</p>
+
+<p>The basic workflow is to create a branch, add your changes, commit them and then push it to GitHub. But if you are first in Hub. You’re welcome to install it in your machine.</p>
+
+<p>If you are using osx, you can do this simple put this on terminal:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">brew install hub</code></pre></figure>
+
+<p>And if you aren’t on OSX you can install using <a href="http://linuxbrew.sh/">linuxbrew</a> and use the same command above to install it.</p>
+
+<h2 id="basic-workflow">Basic Workflow</h2>
+
+<p>After you commit your changes and push them to GitHub. It’s time to open a new Pull Request. I’m pushing to my origin, I’m not sure what happens if you’re pushing to somewhere else but if you know how, please add a comment below.</p>
+
+<p>Running <code class="highlighter-rouge">git version</code> on my machine. The <code class="highlighter-rouge">git</code> and <code class="highlighter-rouge">hub</code> are showed to me:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">git version
+git version 2.7.0
+hub version 2.2.2</code></pre></figure>
+
+<p>It show the <code class="highlighter-rouge">hub</code> version because <code class="highlighter-rouge">git</code> is an alias on my <code class="highlighter-rouge">~/.zshrc</code> file. To make this you need to edit the <code class="highlighter-rouge">.zshrc</code> file and add a new alias to <code class="highlighter-rouge">hub</code>. If you’re using bash, you can edit the <code class="highlighter-rouge">~/.bashrc</code> file.</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">nano ~/.zshrc</code></pre></figure>
+
+<p>For bash users:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">nano ~/.bashrc</code></pre></figure>
+
+<p>And add this at the end of the file:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nb">alias </span><span class="nv">git</span><span class="o">=</span><span class="s2">"hub"</span></code></pre></figure>
+
+<p>After that, you must restart you terminal. Just put there a <code class="highlighter-rouge">zsh</code> or <code class="highlighter-rouge">bash</code> command.</p>
+
+<h2 id="commiting-you-files">Commiting you files</h2>
+
+<p>I’m implement this working on a tags on this blog. So, to do that. I’ll create a commit to put this file and the things I’ve done about the tag feature on GitHub and create a new pull pequest to show to you.</p>
+
+<p>Because this blog is hosted on a <a href="https://github.com/rands0n/rands0n.com">GitHub Pages</a> the tags will not work now and you’ll not see this working. I have plans to purchase a host plan soon :-)</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">git commit -m <span class="s1">'Create a new commit to show how to open a pull request with hub'</span></code></pre></figure>
+
+<p>A big commit message I know. After that I pushed to the <code class="highlighter-rouge">feature/tags</code> on GitHub and created a new pull request with the hub command.</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">git push origin feature/tags
+
+Counting objects: 11, <span class="k">done</span>.
+Delta compression using up to 2 threads.
+Compressing objects: 100% <span class="o">(</span>9/9<span class="o">)</span>, <span class="k">done</span>.
+Writing objects: 100% <span class="o">(</span>11/11<span class="o">)</span>, 1.91 KiB | 0 bytes/s, <span class="k">done</span>.
+Total 11 <span class="o">(</span>delta 4<span class="o">)</span>, reused 0 <span class="o">(</span>delta 0<span class="o">)</span>
+To git@github.com:rands0n/rands0n.com.git
+  <span class="k">*</span> <span class="o">[</span>new branch]      feature/tags -&gt; feature/tags</code></pre></figure>
+
+<p>On code on GitHub, you just need to enter <code class="highlighter-rouge">git pull-request</code>. I’ve put an image below about this command :D</p>
+
+<p><img src="/images/posts/git-commit.png" style="margin: 0 auto;" alt="editor to create a description on github about a pr" /></p>
+
+<p>And the anwser is</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">https://github.com/rands0n/rands0n.com/pull/7</code></pre></figure>
+
+<p>More nice things you can do with <code class="highlighter-rouge">git pull-request</code> command:</p>
+
+<ul>
+  <li>Create a pull request against origin/master (this is the default):</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">git pull-request</code></pre></figure>
+
+<ul>
+  <li>Create a pull request against another repo, you’d probably use this for open source or any other situation where you are pushing to a fork but requesting a pull against an upstream repo; use the <code class="highlighter-rouge">-b</code> switch and the format <code class="highlighter-rouge">owner:branch</code>:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">git pull-request -b joindin:master</code></pre></figure>
+
+<ul>
+  <li>Create a pull request against a branch called something other than “master”:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">git pull-request -b develop</code></pre></figure>
+
+<ul>
+  <li>Create a pull request against something else entirely! The argument is in the format <code class="highlighter-rouge">owner/repo:branch</code> for that.</li>
+</ul>
+
+<h2 id="merging-pull-requests">Merging pull requests</h2>
+
+<p>It’s the same when you click on a green button on GitHub’s interface. So, I’ve merged the commit above by putting this command on my terminal. Nicely ;).</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">git merge https://github.com/rands0n/rands0n.com/pull/7</code></pre></figure>
+
+<p>Thanks to read this little tutorial. It’s just about <a href="https://hub.github.com/">Hub</a> and a very specific command(pr). It helped a lot to me open a new pull requests on my work and I think it can help in your work.</p>
+
+  </div>
+  <!-- /post-content -->
+</div>
+<!-- /post post-page -->
+
+<h3>About Randson Oliveira</h3>
+
+<div>
+  <img src="/images/rands0n.jpg" style="width: 150px; float: left; margin: 0 1.4em 1.4em 0;" alt="">
+
+  <p>
+    Hey! I'm a developer trying building some rock solid systems using Javascript and Ruby. Besides programming I enjoy music and video games.
+  </p>
+
+  <p>
+    I'd love to hear your questions and comments on this article! <a href="https://twitter.com/rands0n">Mention me on twitter</a> or <a href="mailto:orandson@gmail.com">shoot me an email</a>.
+  </p>
+</div>
+
+
+    <div class="footer">
+      ----<br>
+      Copyright 2016 <a href="/">Randson Oliveira</a>, Powered by <a href="http://jekyllrb.com">Jekyll</a>.
+    </div>
+
+  </div>
+  <!-- /container -->
+
+</body>
+</html>
+

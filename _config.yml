@@ -1,0 +1,21 @@
+title: 'Randson Oliveira'
+email: 'orandson@gmail.com'
+
+baseurl: '/'
+url: 'http://rands0n.com'
+
+excerpt_separator: '<!--more-->'
+
+# paginate
+paginate: 5
+paginate_path: /page/:num
+
+# permalink
+permalink: :title/
+
+sass:
+  dir: _sass
+  style: compressed
+
+# Build settings
+markdown: kramdown
