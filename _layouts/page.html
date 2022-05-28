@@ -2,4 +2,8 @@
 layout: default
 ---
 
+<h2>{{ page.title }}</h2>
+
+{% if page.summary %}<p>{{ page.summary }}</p>{% endif %}
+
 {{content}}

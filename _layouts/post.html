@@ -2,6 +2,29 @@
 layout: default
 ---
 
-post
+<div class="post post-page">
+  <div class="post-content">
+    <section class="post-title">
+      <h2>{{ page.title }}</h2>
+    </section>
 
-{{ content }}
+    <div class="post-meta">
+      <time class="post-meta-date" datetime="{{ page.date }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+      &mdash;
+      <span class="read-time" title="Estimate read time">
+        {% assign words = content | number_of_words %}
+        {% if words < 360 %}1 min read{% else %}{{ words | divided_by:180 }} min read{% endif %}
+      </span>
+    </div>
+    <!-- /post-meta -->
+
+    <section class="post-divider">
+      <hr />
+    </section>
+    <!-- /post-divider -->
+
+    {{ content }}
+  </div>
+  <!-- /post-content -->
+</div>
+<!-- /post post-page -->

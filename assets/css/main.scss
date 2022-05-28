@@ -4,7 +4,7 @@
 
 @charset "utf-8";
 
-@import "variables", "hsticky", "socials", "normalize", "sidebar", "container", "divider";
+@import "variables", "hsticky", "archive", "post", "socials", "normalize", "sidebar", "container", "divider";
 
 body {
   font-family: $font-family;
@@ -26,6 +26,11 @@ a {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $sfont-family;
+}
+
+hr {
+  width: 25%;
+  margin: 2rem auto;
 }
 
 @media (prefers-color-scheme: light) {

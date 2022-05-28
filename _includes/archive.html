@@ -1,0 +1,22 @@
+<section class="archive">
+  <ul>
+    {% for post in site.posts %}
+      {% if post.language != 'pt' %}
+        <a href="{{ post.url }}">
+          <li>
+            <h3 class="post-title">{{ post.title }}</h3>
+            <section class="post-summary">{{ post.summary }}</section>
+            <section class="post-meta">
+              <span class="post-date">{{ post.date | date: "%b %d, %Y" }}</span>
+            </section>
+
+            <section class="divider">
+              <hr />
+            </section>
+          </li>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</section>
+<!-- /archive -->
