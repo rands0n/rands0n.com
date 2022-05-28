@@ -21,11 +21,9 @@
       padding-left: 1rem;
     }
 
-    li {
-      &:last-child {
-        hr {
-          display: none;
-        }
+    li:last-child {
+      hr {
+        display: none;
       }
     }
 

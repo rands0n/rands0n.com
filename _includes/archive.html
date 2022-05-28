@@ -2,8 +2,8 @@
   <ul>
     {% for post in site.posts %}
       {% if post.language != 'pt' %}
-        <a href="{{ post.url }}">
-          <li>
+        <li>
+          <a href="{{ post.url }}">
             <h3 class="post-title">{{ post.title }}</h3>
             <section class="post-summary">{{ post.summary }}</section>
             <section class="post-meta">
@@ -13,8 +13,8 @@
             <section class="divider">
               <hr />
             </section>
-          </li>
-        </a>
+          </a>
+        </li>
       {% endif %}
     {% endfor %}
   </ul>
