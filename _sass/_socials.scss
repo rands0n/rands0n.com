@@ -1,0 +1,13 @@
+.socials {
+  display: flex;
+  justify-content: center;
+
+  a {
+    text-align: center;
+    margin-right: 5px;
+
+    img {
+      width: 35px;
+    }
+  }
+}

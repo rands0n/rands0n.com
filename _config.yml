@@ -1,0 +1,28 @@
+title: "Randson"
+email: "orandson@gmail.com"
+bio: "Software Engineer"
+
+timezone: Europe/Lisbon
+
+base_uri: "/"
+base_url: "https://rands0n.com"
+
+excerpt_separator: "<!--more-->"
+
+# permalink
+permalink: "/:title"
+
+# navigation
+navs:
+  - title: Blog
+    url: "/blog"
+  - title: Talks
+    url: "/talks"
+
+sass:
+  sass_dir: _sass
+  style: compressed
+  sourcemap: development
+
+# Build settings
+markdown: kramdown

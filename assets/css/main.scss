@@ -1,0 +1,50 @@
+---
+# only the main sass file needs front matter (the dashes are enough)
+---
+
+@charset "utf-8";
+
+@import "variables", "hsticky", "socials", "normalize", "sidebar", "container", "divider";
+
+body {
+  font-family: $font-family;
+  font-size: $font-size;
+  font-style: $font-style;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  color: $polar-light;
+}
+
+a {
+  text-decoration: none;
+  color: $polar-light;
+
+  ::hover {
+    color: $polar-dark;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $sfont-family;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background: url(/assets/images/texture-white.png) repeat;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+
+  body {
+    background: $polar-dark;
+    color: $snow-dark;
+  }
+
+  .sidebar {
+    background-color: $snow-dark;
+  }
+}

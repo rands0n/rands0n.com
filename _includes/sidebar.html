@@ -1,0 +1,35 @@
+<section class="sidebar">
+  <section class="sidebar-avatar">
+    <a href="{{ site.baseurl }}">
+      <img
+        src="/assets/images/avatar.png"
+        width="150"
+        alt="Randson"
+      />
+    </a>
+  </section>
+  <!-- /sidebar-avatar -->
+
+  <h1>{{ site.title }}</h1>
+
+  <section class="bio">Software Engineer</section>
+
+  {% include socials.html %}
+
+  <nav class="sidebar-nav">
+    <ul>
+      {% for nav in site.navs %}
+        <li>
+          <a
+            href="{{ nav.url }}"
+            class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}"
+          >
+            {{ nav.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+  <!-- /sidebar-nav -->
+</section>
+<!-- /sidebar -->

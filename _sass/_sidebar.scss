@@ -1,0 +1,79 @@
+/*
+ * Sidebar
+ *
+ * Flexible banner for housing site name, intro, and "footer" content. Starts
+ * out above content in mobile and later moves to the side with wider viewports.
+ */
+.sidebar {
+  padding: 5rem 0;
+  width: 25%;
+  align-items: center;
+  background-color: $snow-light;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0px 0px 8px 1px $polar-light;
+  text-align: center;
+  position: fixed;
+  max-width: 275px;
+
+  @media (max-width: $media-small) {
+    display: none;
+  }
+
+  @media (min-width: $media-small) {
+    display: none;
+  }
+
+  @media (min-width: $media-large) {
+    display: block;
+  }
+
+  h1 {
+    font-family: $sfont-family;
+    margin: 0;
+    padding: 0;
+    color: $polar;
+  }
+
+  .bio {
+    font-size: 14px;
+    color: gray;
+    margin: -.8rem 0 1rem 0;
+  }
+}
+
+/*
+ * Avatar
+ *
+ * Controls the the avatar and name.
+*/
+.sidebar-avatar {
+  img {
+    border: 2px solid white;
+    border-radius: 50%;
+  }
+}
+
+/*
+ * Navigation
+ *
+ * Controls the navigation and which pages are available.
+*/
+.sidebar-nav {
+  margin-top: 1rem;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin-bottom: 5px;
+
+      a {
+        text-decoration: none;
+        display: block;
+        font-size: 18px;
+      }
+    }
+  }
+}
