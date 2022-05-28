@@ -9,3 +9,18 @@
     {% include socials.html %}
   </section>
 </section>
+
+<section class="hsticky-nav">
+  <ul>
+    {% for nav in site.navs %}
+      <li>
+        <a
+          href="{{ nav.url }}"
+          class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}"
+        >
+          {{ nav.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
