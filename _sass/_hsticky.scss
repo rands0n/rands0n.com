@@ -9,10 +9,17 @@
   z-index: 2;
 
   .brand-meta {
+    @media (prefers-color-scheme: dark) {
+      .name { color: $polar; }
+    }
+
+    .name {
+      margin-top: -10px;
+    }
 
     .bio {
       font-size: 12px;
-      margin-top: -15px;
+      margin-top: -16px;
       color: gray;
     }
   }
@@ -55,10 +62,27 @@
 .hsticky-nav {
   width: 100%;
   position: fixed;
-  margin-top: 5.4rem;
-  background-color: $snow-light;
-  box-shadow: 0px 8px 10px 0px $polar-light;
+  margin-top: 5.3rem;
+  background-color: $snow;
+  // box-shadow: 0px 8px 10px 0px $polar-light;
   z-index: 2;
+  text-align: center;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 35%;
+    border-top: 1px solid $polar;
+    margin: 0 auto;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 75%;
+    border-top: 1px solid $polar;
+    margin: 0 auto;
+  }
 
   @media (max-width: $media-large) {
     display: block;
@@ -78,6 +102,12 @@
 
     li {
       margin-right: 15px;
+
+      @media (prefers-color-scheme: dark) {
+        a {
+          color: $polar;
+        }
+      }
 
       a {
         text-decoration: none;

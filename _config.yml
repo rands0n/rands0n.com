@@ -23,6 +23,8 @@ navs:
     url: "/blog"
   - title: Talks
     url: "/talks"
+  - title: Vids
+    url: "/vids"
 
 sass:
   sass_dir: _sass

@@ -73,6 +73,16 @@
         text-decoration: none;
         display: block;
         font-size: 18px;
+
+        &.active {
+          color: $aurora-orange;
+        }
+      }
+
+      @media (prefers-color-scheme: dark) {
+        a {
+          color: $polar;
+        }
       }
     }
   }
