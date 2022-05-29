@@ -21,6 +21,12 @@
       padding-left: 1rem;
     }
 
+    li {
+      a {
+        text-decoration: none;
+      }
+    }
+
     li:last-child {
       hr {
         display: none;

@@ -13,6 +13,10 @@ excerpt_separator: "<!--more-->"
 # permalink
 permalink: "/:title"
 
+collections:
+  talks:
+    sort_by: when
+
 # navigation
 navs:
   - title: Blog

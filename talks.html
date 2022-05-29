@@ -3,3 +3,34 @@ layout: page
 title: Talks
 summary: Here you can find all my presentation slides/videos and also know where you can find me in the future.
 ---
+
+<ul class="talks">
+  {% for talk in site.talks %}
+    <li class="talk">
+      {% assign currentdate = talk.when | date: "%Y" %}
+      {% if currentdate != date %}
+        <h3 class="currentyear collapsible">{{ currentdate }}</h3>
+      {% endif %}
+
+      <section class="content">
+        <h4>
+          <a href="{{talk.event_url}}">
+            {{ talk.event }}
+          </a>
+        </h4>
+
+        <ul>
+          <li>When: {{ talk.when | date: "%b %d, %Y" }}</li>
+          <li>Where: {{ talk.where }}</li>
+          <li>
+            Presentation: {% if talk.presentation %}<a href="{{talk.presentation}}">{{talk.title}}</a>{% else %}{{ talk.title }}{% endif %}
+          </li>
+        </ul>
+
+        {% if talk.embeded_url %}
+        <iframe class="speakerdeck-iframe" frameborder="0" src="{{ talk.embeded_url }}" title="{{ talk.title }}" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="border: 0px; background-color: rgba(0, 0, 0, 0.1); margin-top: 1rem; padding: 0px; border-radius: 6px; -webkit-background-clip: padding-box; -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; height: 415px;"></iframe>
+        {% endif %}
+      </section>
+    </li>
+  {% endfor %}
+</ul>

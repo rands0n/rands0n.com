@@ -4,7 +4,18 @@
 
 @charset "utf-8";
 
-@import "variables", "hsticky", "archive", "post", "socials", "normalize", "sidebar", "container", "highlight";
+@import
+  "variables",
+  "hsticky",
+  "archive",
+  "post",
+  "socials",
+  "normalize",
+  "sidebar",
+  "container",
+  "highlight",
+  "talks",
+  "collapsible";
 
 body {
   font-family: $font-family;
@@ -16,12 +27,7 @@ body {
 }
 
 a {
-  text-decoration: none;
-  color: $polar-light;
-
-  ::hover {
-    color: $polar-dark;
-  }
+  text-decoration: underline;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -37,11 +43,27 @@ hr {
   body {
     background: url(/assets/images/texture-white.png) repeat;
   }
+
+  a {
+    color: $polar;
+
+    ::hover {
+      color: $polar-light;
+    }
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
+  }
+
+  a {
+    color: $snow;
+
+    ::hover {
+      color: $snow-light;
+    }
   }
 
   body {
