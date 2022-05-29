@@ -10,6 +10,10 @@ Ever since I built this blog back in 2014, I’ve posted some posts. However, yo
 
 But a lot changed since my decision to build [my channel on YouTube](https://www.youtube.com/channel/UCUNpqKz2cuirzgvai-d69tQ)(which I highly recommend you to check it out). Now, more than ever I'm back to produce more content for the community and for myself.
 
+<section class="picture">
+  <img src="/assets/images/posts/im-back.svg" alt="Coming back!" />
+</section>
+
 ## How I did this blog?
 
 The engine is the same, [Jekyll](https://jekyllrb.com) along the way. What a most liked about this version is that now I put the dark mode support, for those who like it like I like.

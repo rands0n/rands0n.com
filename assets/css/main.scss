@@ -40,6 +40,15 @@ hr {
   margin: 2rem auto;
 }
 
+.picture {
+  display: flex;
+  justify-content: center;
+
+  img {
+    max-width: 32rem;
+  }
+}
+
 @media (prefers-color-scheme: light) {
   body {
     background: url(/assets/images/texture-white.png) repeat;
