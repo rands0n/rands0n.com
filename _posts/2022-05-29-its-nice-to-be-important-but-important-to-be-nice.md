@@ -1,7 +1,7 @@
 ---
 layout: post
 title: It’s Nice To Be Important, But It’s More Important To Be Nice
-summary: We live in a society. People have feelings and we should treat well be if we want to be treated well. Treating other people well is a key to be treated well.
+summary: We live in a society. People have feelings and we should treat well if we want to be treated well. Treating other people well is a key to be treated well.
 date: 2022-05-29 08:00:00
 tags: psychology programmer
 ---
