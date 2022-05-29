@@ -3,6 +3,7 @@ layout: post
 title: A Quickly Dive In To Regular Expressions
 summary: A not so quickly, but quickly introduction to regular expressions and its caveats. We're gonna see about history, notation, testing by matches, grouping and more...
 date: 2016-01-29 10:00:00
+tags: regex
 ---
 
 Search for patterns, things that can be found on text or just remove these HTML tags from a description of a product on a ecommerce system. To search for this in regular language is so hard. However, we have a Regular Expression’s.

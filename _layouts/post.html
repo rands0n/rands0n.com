@@ -11,6 +11,14 @@ layout: default
     <div class="post-meta">
       <time class="post-meta-date" datetime="{{ page.date }}">{{ page.date | date: "%B %-d, %Y" }}</time>
       &mdash;
+      <ul class="post-tags">
+        {% for tag in page.tags %}
+          <li class="post-tag">
+            <a href="/tags">{{tag}}</a>
+          </li>
+        {% endfor %}
+      </ul>
+      &mdash;
       <span class="read-time" title="Estimate read time">
         {% assign words = content | number_of_words %}
         {% if words < 360 %}1 min read{% else %}{{ words | divided_by:180 }} min read{% endif %}

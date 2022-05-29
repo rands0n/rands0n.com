@@ -3,6 +3,7 @@ layout: post
 title: .bind(), .call(), .apply() in Javascript
 summary: Functions are Objects, as you should know by now. And as Objects, functions have methods, including the bind, call and apply. We will learn more about this.
 date: 2016-07-29 10:00:00
+tags: javascript
 ---
 
 I came to this article about [.bind()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind), [.call()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call) and [.apply()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply) functions in Javascript because this is a very complicated subject. And if you’re a beginner with Javascript this will help you to understand the concept of these functions and how to use and apply.

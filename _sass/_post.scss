@@ -6,4 +6,27 @@
   .post-meta {
     text-align: center;
   }
+
+  .post-tags {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+
+    .post-tag {
+      margin-right: 10px;
+
+      &:after {
+        content: ",";
+      }
+
+      &:last-child {
+        margin-right: 0;
+
+        &:after {
+          content: "";
+        }
+      }
+    }
+  }
 }

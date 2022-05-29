@@ -1,0 +1,17 @@
+---
+layout: page
+title: Tags
+summary: Here you can find all the tags related to existent posts.
+---
+
+{% for tag in site.tags %}
+  <section class="collapsible">{{tag[0]}}</section>
+
+  <ul class="content">
+    {% for post in tag[1] %}
+      <li>
+        <a href="{{post.url}}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endfor %}

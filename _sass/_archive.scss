@@ -17,6 +17,16 @@
       padding-left: 1rem;
     }
 
+    .post-tags {
+      margin: 0;
+      padding: 0;
+      display: inline-flex;
+
+      .post-tag {
+        margin-right: 10px;
+      }
+    }
+
     .post-meta {
       padding-left: 1rem;
     }
