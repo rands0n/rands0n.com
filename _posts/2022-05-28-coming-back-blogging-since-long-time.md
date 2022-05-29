@@ -32,8 +32,8 @@ There are some key topics I want to tackle which involves:
 
 - Distributed software;
 - Concurrecy & Parallelism;
-- Typography
-- HTTP
+- Typography;
+- HTTP.
 
 These are some I could think of now. Also there's a lot of hot topics I want to tackle too.
 
