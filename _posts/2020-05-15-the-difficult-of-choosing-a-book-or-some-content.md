@@ -3,7 +3,7 @@ layout: post
 title: The Difficult of Choosing a Book or Some Learning Content
 summary: Choosing a good book on a particular field from several books on the subject out there can be challeging.
 date: 2020-05-15 10:00:00
-categories: learning book screencasts
+tags: learning book screencasts
 ---
 
 Choosing a good book on a particular field from several books on the subject out there can be challeging.

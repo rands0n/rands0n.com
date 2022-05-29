@@ -3,7 +3,7 @@ layout: post
 title: Coming back to blogging since a long time away
 summary: A lot of things to tackle regarding my personal study and life. But now I'm more confident to return to produce more content for the community, and for myself.
 date: 2022-05-28 10:00:00
-categories: learning book self-growing
+tags: learning book self-growing
 ---
 
 Ever since I built this blog back in 2014, I’ve posted some posts. However, you know. A lot of things to tackle regarding my personal study and life.

@@ -1,4 +1,5 @@
 ---
+layout: post
 title: .bind(), .call(), .apply() in Javascript
 summary: Functions are Objects, as you should know by now. And as Objects, functions have methods, including the bind, call and apply. We will learn more about this.
 date: 2016-07-29 10:00:00
