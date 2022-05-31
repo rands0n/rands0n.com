@@ -4,4 +4,24 @@ title: Vids
 summary: Here you can find all my playlists videos I've done. Some of them from YouTube.
 ---
 
-<p>To be constructed...</p>
+<h4 class="collapsible">Something You Should Know</h4>
+
+<ul class="content">
+  {% for vid in site.vids %}
+    {% assign title = vid.title %}
+    {% if title contains 'Something You Should Know' %}
+      <li><a href="{{vid.url}}">{{vid.subtitle}}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+<h4 class="collapsible">Cookies 101</h4>
+
+<ul class="content">
+  {% for vid in site.vids %}
+    {% assign title = vid.title %}
+    {% if title contains 'Cookies' %}
+      <li><a href="{{vid.url}}">{{vid.title}} &mdash; {{vid.subtitle}}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>

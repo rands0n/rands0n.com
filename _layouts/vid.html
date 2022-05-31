@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+<div class="post post-page">
+  <div class="post-content">
+    <section class="post-title">
+      <h2>{{ page.title }} {% if page.subtitle %} &mdash; {{page.subtitle}}{% endif %}</h2>
+    </section>
+
+    <div class="post-meta">
+      <time class="post-meta-date" datetime="{{ page.date }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+      &mdash;
+      <span class="read-time" title="Estimate read time">
+        {% assign words = content | number_of_words %}
+        {% if words < 360 %}1 min read{% else %}{{ words | divided_by:180 }} min read{% endif %}
+      </span>
+    </div>
+    <!-- /post-meta -->
+
+    <section class="post-divider">
+      <hr />
+    </section>
+    <!-- /post-divider -->
+
+    <section class="post-video">
+      <iframe src="{{page.video_url}}" title="{{page.title}}{% if page.subtitle %} - {{page.subtitle}}{% endif %}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+
+    {{ content }}
+
+    <h2>Comments</h2>
+
+    {% include replybox.html %}
+  </div>
+  <!-- /post-content -->
+</div>
+<!-- /post post-page -->
