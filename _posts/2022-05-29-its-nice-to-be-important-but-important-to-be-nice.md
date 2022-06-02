@@ -12,6 +12,10 @@ Not everyone is aware of that, and to be honest sometimes we shouldn’t. To mai
 
 However, one thing is important: we need to treat others well if we want to be treated well. It’s a win-to-win step that I think everyone should be always trying to achieve.
 
+<section class="picture">
+  <img src="/assets/images/posts/be-nice.svg" alt="Coming back!" />
+</section>
+
 ## Mind your Manners
 
 Truth be told, a well-mannered person is difficult to find nowadays.
